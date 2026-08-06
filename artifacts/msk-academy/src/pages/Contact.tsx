@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { submitRegistration } from "@/api";
 
 const SPORTS_LIST = [
   "Cricket",
@@ -79,14 +80,10 @@ export default function Contact() {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch('/api/registration', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values)
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to submit registration');
+      const response = await submitRegistration(values);
+
+      if (!response.success) {
+        throw new Error(response.message || 'Failed to submit registration');
       }
 
       toast({
