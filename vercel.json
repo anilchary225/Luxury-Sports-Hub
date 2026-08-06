@@ -1,0 +1,6 @@
+{
+  "buildCommand": "pnpm --filter @workspace/msk-academy run build",
+  "outputDirectory": "artifacts/msk-academy/dist/public",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": "vite"
+}
