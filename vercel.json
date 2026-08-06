@@ -1,6 +1,6 @@
 {
   "version": 2,
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm --filter @workspace/msk-academy run build && node ./scripts/copy-msk-academy-build-to-root-public.cjs",
+  "buildCommand": "cd /vercel/path0 && pnpm --filter @workspace/msk-academy run build && node ./scripts/copy-msk-academy-build-to-root-public.cjs",
   "outputDirectory": "public"
 }
