@@ -14,11 +14,12 @@ export default function SportsMeetDialog() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Show once per session
-    if (!sessionStorage.getItem("sportsMeetSeen")) {
-      const t = setTimeout(() => setOpen(true), 800);
-      return () => clearTimeout(t);
+    if (sessionStorage.getItem("sportsMeetSeen")) {
+      return;
     }
+  
+    const timer = setTimeout(() => setOpen(true), 800);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {

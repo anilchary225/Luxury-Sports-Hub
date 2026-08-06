@@ -47,10 +47,12 @@ router.get("/download-enquiries", (req: Request, res: Response) => {
   }
 
   if (fs.existsSync(EXCEL_FILE_PATH)) {
-    res.download(EXCEL_FILE_PATH, "enquiries.xlsx");
-  } else {
-    res.status(404).json({ error: "No enquiries yet. Submit some registrations first!" });
+    return res.download(EXCEL_FILE_PATH, "enquiries.xlsx");
   }
+  
+  return res
+    .status(404)
+    .json({ error: "No enquiries yet. Submit some registrations first!" });
 });
 
 export default router;
