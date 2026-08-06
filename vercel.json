@@ -1,6 +1,13 @@
 {
-  "buildCommand": "pnpm run build",
-  "outputDirectory": "dist/public",
+  "version": 3,
   "installCommand": "pnpm install --frozen-lockfile",
-  "framework": "vite"
+  "builds": [
+    {
+      "src": "artifacts/msk-academy/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/public"
+      }
+    }
+  ]
 }
