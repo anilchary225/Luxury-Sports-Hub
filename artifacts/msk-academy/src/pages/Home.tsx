@@ -249,7 +249,7 @@ export default function Home() {
         </video>
 
         {/* Stronger left-side shade to elevate text across the video */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 z-0 bg-linear-to-r from-black/80 via-black/40 to-transparent" />
         
         <div className="container mx-auto relative z-10 flex flex-col items-start text-left">
           <div className="hero-content max-w-[800px]">
@@ -337,7 +337,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] mb-4">
               EXPLORE <span className="text-[var(--color-gold-primary)] italic">THE ARENA</span>
             </h2>
-            <div className="section-title-line h-[1px] bg-gradient-to-r from-transparent via-[var(--color-gold-primary)] to-transparent w-48 mx-auto mb-8" />
+            <div className="section-title-line h-[1px] bg-linear-to-r from-transparent via-[var(--color-gold-primary)] to-transparent w-48 mx-auto mb-8" />
             <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg font-light leading-relaxed">
               From championship-grade cricket nets to professional indoor arcades — Zenithh Sports Arena provides the ultimate environment for athletic growth.
             </p>
@@ -435,7 +435,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)]">
               HIGH-PERFORMANCE <span className="text-[var(--color-gold-primary)] italic">SPORTS PROGRAMS</span>
             </h2>
-            <div className="section-title-line h-[1px] bg-gradient-to-r from-transparent via-[var(--color-gold-primary)] to-transparent w-48 mx-auto mt-6" />
+            <div className="section-title-line h-[1px] bg-linear-to-r from-transparent via-[var(--color-gold-primary)] to-transparent w-48 mx-auto mt-6" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -476,7 +476,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] leading-[1.2] tracking-widest mb-6">
                 WHERE <span className="text-[var(--color-gold-primary)] italic tracking-widest">LIMITS END,</span><br className="hidden md:block" /> CHAMPIONS BEGIN
               </h2>
-              <div className="section-title-line h-[1px] bg-gradient-to-r from-[var(--color-gold-primary)] to-transparent w-48 mb-6" />
+              <div className="section-title-line h-[1px] bg-linear-to-r from-[var(--color-gold-primary)] to-transparent w-48 mb-6" />
               <p className="text-[var(--text-muted)] text-lg leading-relaxed mb-10 font-light max-w-xl">
                 Zenithh Sports Arena is Hyderabad's most comprehensive multi-sport training facility - built for tier-1 schools, colleges, and serious athletes who demand world-class infrastructure.
               </p>
