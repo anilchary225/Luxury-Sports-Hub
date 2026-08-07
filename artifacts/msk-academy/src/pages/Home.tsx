@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CoachCard from "@/components/CoachCard";
 import { COACHES_DATA } from "@/data/coaches";
-import backgroundvideo from '../../public/videos/hero-background.mp4'
+import backgroundvideo from '../../public/videos/hero-background.webm'
 
 gsap.registerPlugin(ScrollTrigger);
 
