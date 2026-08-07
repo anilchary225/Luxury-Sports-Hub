@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CoachCard from "@/components/CoachCard";
 import { COACHES_DATA } from "@/data/coaches";
+import backgroundvideo from '../../public/videos/hero-background.mp4'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -244,7 +245,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          <source src={backgroundvideo} type="video/mp4" />
         </video>
 
         {/* Stronger left-side shade to elevate text across the video */}

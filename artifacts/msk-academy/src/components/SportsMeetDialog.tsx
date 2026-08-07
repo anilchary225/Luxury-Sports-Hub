@@ -30,7 +30,7 @@ export default function SportsMeetDialog() {
   return (
       <Dialog open={open} onOpenChange={(v) => { if (!v) handleClose(); }}>
         <DialogContent
-          className="p-0 gap-0 max-w-4xl lg:w-[85vw] overflow-hidden shadow-2xl bg-[var(--bg-primary)]"
+          className="p-0 gap-0 max-w-3xl lg:w-[95vw] overflow-hidden shadow-2xl bg-[var(--bg-primary)]"
           style={{ borderRadius: 0 }}
         >
           {/* Close Button */}
@@ -47,7 +47,7 @@ export default function SportsMeetDialog() {
           <div className="hidden lg:flex h-full">
     
             {/* LEFT */}
-            <div className="relative w-[45%] bg-black flex items-center justify-center">
+            <div className="relative w-[55%] bg-black flex items-center justify-center">
               <img
                 src="/images/sports-meet-poster.jpeg"
                 alt="Inter-School Sports Meet Poster"
@@ -63,40 +63,40 @@ export default function SportsMeetDialog() {
                   Sponsored by IGNITE INSTITUTIONS
                 </p>
     
-                <h2 className="text-xl md:text-2xl font-black uppercase tracking-widest text-[var(--text-primary)] leading-tight mb-1">
+                <h2 className="text-md font-black uppercase tracking-widest text-[var(--text-primary)] leading-tight mb-1">
                   INTER-SCHOOL
                   <br />
                   SPORTS MEET
                 </h2>
     
-                <p className="text-xl font-black uppercase tracking-[0.25em] text-[var(--color-gold-primary)]">
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-[var(--color-gold-primary)]">
                   🏆 PARTICIPATE &amp; WIN
                 </p>
               </div>
     
               <div className="w-12 h-[2px] bg-primary mb-5" />
     
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3 mb-3">
                 {SPORTS.map((s) => (
                   <div
                     key={s.name}
-                    className="flex items-start justify-between gap-3 border border-[var(--border-light)] px-3 py-2 hover:border-primary/40 transition-colors"
+                    className="flex items-start justify-between gap-3 border border-[var(--border-light)] px-3 py-1 hover:border-primary/40 transition-colors"
                   >
                     <div>
-                      <p className="font-black uppercase text-[11px] tracking-widest text-[var(--text-primary)]">
+                      <p className="font-black uppercase text-[8px] tracking-widest text-[var(--text-primary)]">
                         {s.name}
                       </p>
     
-                      <p className="text-[10px] text-[var(--text-muted)] tracking-wider mt-0.5">
+                      <p className="text-[7px] text-[var(--text-muted)] tracking-wider mt-0.5">
                         {s.cats}
                       </p>
     
-                      <p className="text-[10px] text-[var(--text-muted)] tracking-wider">
+                      <p className="text-[7px] text-[var(--text-muted)] tracking-wider">
                         {s.dates} · 10 AM
                       </p>
                     </div>
     
-                    <span className="text-primary font-black text-xs whitespace-nowrap">
+                    <span className="text-primary font-black text-[10px] whitespace-nowrap">
                       {s.fee}
                     </span>
                   </div>
