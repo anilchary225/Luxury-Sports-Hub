@@ -4,9 +4,9 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, ArrowRight, CheckCircle, Trophy, Users, Award, Clock } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CoachCard from "@/components/CoachCard";
-import { COACHES_DATA } from "@/data/coaches";
-import backgroundvideo from '../../public/videos/hero-background.webm'
+// import CoachCard from "@/components/CoachCard";
+// import { COACHES_DATA } from "@/data/coaches";
+// import backgroundvideo from '../../public/videos/hero-background.webm'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -243,9 +243,10 @@ export default function Home() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          preload="auto"
+          className="absolute inset-0 z-0 h-full w-full object-cover"
         >
-          <source src={backgroundvideo} type="video/mp4" />
+          <source src="/videos/hero-background.webm" type="video/webm" />
         </video>
 
         {/* Stronger left-side shade to elevate text across the video */}

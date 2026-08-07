@@ -64,7 +64,7 @@ export default function SportsMeetDialog() {
       }}
     >
       <DialogContent
-  className="max-w-3xl gap-0 overflow-hidden border-0 bg-[var(--bg-primary)] p-0 shadow-2xl outline-none ring-0 lg:w-[95vw]"
+  className="max-w-2xl gap-0 overflow-hidden border-0 bg-[var(--bg-primary)] p-0 shadow-2xl outline-none ring-0 lg:w-[95vw]"
   style={{ borderRadius: 0 }}
 >
         {/* ===================== DESKTOP ===================== */}
