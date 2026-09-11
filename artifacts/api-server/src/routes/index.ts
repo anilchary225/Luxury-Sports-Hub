@@ -1,4 +1,3 @@
-
 import { Router, type IRouter } from "express";
 import healthRouter from "./health";
 import registrationRouter from "./registration";
@@ -9,4 +8,3 @@ router.use(healthRouter);
 router.use(registrationRouter);
 
 export default router;
-
