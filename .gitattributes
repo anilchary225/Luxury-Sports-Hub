@@ -1,0 +1,2 @@
+artifacts/msk-academy/public/videos/C0013.MP4 filter=lfs diff=lfs merge=lfs -text
+artifacts/msk-academy/public/videos/hero-background.mp4 filter=lfs diff=lfs merge=lfs -text

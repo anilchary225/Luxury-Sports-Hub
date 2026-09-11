@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "MSK Academy"
+description = "A premium sports academy website for MSK Academy, showcasing multiple sports programs, coaching staff, facilities, events, and gallery. Visitors can explore sports offerings, meet coaches, view facilities, and submit enquiries or registrations for sports programs."
+version = "1.0.0"
+id = "artifacts/msk-academy"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19135
+
+[services.development]
+run = "pnpm --filter @workspace/msk-academy run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/msk-academy", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/msk-academy/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19135"
+BASE_PATH = "/"

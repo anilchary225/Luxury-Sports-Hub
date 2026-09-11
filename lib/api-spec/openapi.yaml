@@ -1,0 +1,138 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: enquiry
+    description: Enquiry and registration operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /registration:
+    post:
+      operationId: submitRegistration
+      tags: [enquiry]
+      summary: Submit a registration/enquiry form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnquiryInput"
+      responses:
+        "200":
+          description: Registration saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+        "400":
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /enquiry:
+    post:
+      operationId: submitEnquiry
+      tags: [enquiry]
+      summary: Submit a general enquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnquiryInput"
+      responses:
+        "200":
+          description: Enquiry saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+        "400":
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    EnquiryInput:
+      type: object
+      required:
+        - name
+        - email
+        - phone
+        - sport
+        - enquiryType
+        - message
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        institution:
+          type: ["string", "null"]
+        sport:
+          type: string
+        enquiryType:
+          type: string
+        preferredTiming:
+          type: ["string", "null"]
+        attendanceType:
+          type: ["string", "null"]
+        numberOfAttendees:
+          type: ["string", "null"]
+        friendReferral:
+          type: ["string", "null"]
+        referralMobile:
+          type: ["string", "null"]
+        referralEmail:
+          type: ["string", "null"]
+        message:
+          type: string
+    SuccessResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+      required:
+        - success
+        - message
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
