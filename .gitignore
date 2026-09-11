@@ -53,3 +53,4 @@ attached_assets/
 
 # Migration backup
 .migration-backup/
+artifacts/api-server/.env
