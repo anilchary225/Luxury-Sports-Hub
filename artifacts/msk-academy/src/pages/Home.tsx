@@ -431,9 +431,9 @@ export default function Home() {
       {/* ═══ HIGH PERFORMANCE SHOWCASE (SEO & H3 HIERARCHY) ═══ */}
       <section className="py-24 bg-[var(--bg-secondary)] relative overflow-hidden border-b border-[var(--border-light)]">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 ">
             <span className="text-[var(--color-gold-primary)] font-black tracking-[0.4em] uppercase text-xs mb-4 block">Our Training Ecosystem</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)]">
+            <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] leading-[1.3]">
               HIGH-PERFORMANCE <span className="text-[var(--color-gold-primary)] italic">SPORTS PROGRAMS</span>
             </h2>
             <div className="section-title-line h-[1px] bg-linear-to-r from-transparent via-[var(--color-gold-primary)] to-transparent w-48 mx-auto mt-6" />
@@ -474,7 +474,7 @@ export default function Home() {
             {/* CONTENT LEFT */}
             <div className="w-full lg:w-3/5 order-2 lg:order-1">
               <span className="text-[var(--color-gold-primary)] font-bold tracking-[0.5em] uppercase text-xs block mb-4">WHY ZENITHH</span>
-              <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] leading-[1.2] tracking-widest mb-6">
+              <h2 className="text-3xl md:text-5xl font-black uppercase leading-[1.3] text-[var(--text-primary)] leading-[1.2] tracking-widest mb-6">
                 WHERE <span className="text-[var(--color-gold-primary)] italic tracking-widest">LIMITS END,</span><br className="hidden md:block" /> CHAMPIONS BEGIN
               </h2>
               <div className="section-title-line h-[1px] bg-linear-to-r from-[var(--color-gold-primary)] to-transparent w-48 mb-6" />

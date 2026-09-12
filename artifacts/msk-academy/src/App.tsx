@@ -78,7 +78,7 @@ function App() {
       <TooltipProvider>
         <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <ScrollToTop />
-          <SportsMeetDialog />
+          {/* <SportsMeetDialog /> */}
           <AppRouter />
         </BrowserRouter>
         <Toaster />

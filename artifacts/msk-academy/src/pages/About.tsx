@@ -57,7 +57,7 @@ export default function About() {
 
             <div className="w-full lg:w-1/2">
               <span className="text-[var(--color-gold-primary)] font-bold tracking-[0.5em] uppercase text-[10px] block mb-6">PREMIER ACADEMY</span>
-              <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] leading-[1.15] tracking-widest mb-6 md:mb-10">
+              <h2 className="text-3xl md:text-5xl font-black uppercase  text-[var(--text-primary)] leading-[1.25] tracking-widest mb-6 md:mb-10">
                 WE BUILD <span className="text-[var(--color-gold-primary)] italic">CHAMPIONS</span> <br /> WITH PRECISION
               </h2>
               <div className="w-20 h-[1px] bg-[var(--color-gold-primary)] mb-8 md:mb-12" />

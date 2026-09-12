@@ -13,23 +13,23 @@ export default function Footer() {
   return (
     <footer className="main-footer">
       <div className="absolute inset-0 bg-grain opacity-10 pointer-events-none" />
-      
+
       <div className="footer-grid relative z-10">
         {/* COL 1: BRANDING */}
         <div className="footer-branding">
           <Link to="/">
-            <img loading="lazy" 
-              src="/images/logo_final.jpeg" 
-              alt="Zenithh Sports Arena" 
-              className="footer-logo logo-glow" 
+            <img loading="lazy"
+              src="/images/logo_final.png"
+              alt="Zenithh Sports Arena"
+              className="footer-logo logo-glow"
             />
           </Link>
           <p>
-            Hyderabad's premier multi-sport training facility. Elite coaching. 
+            Hyderabad's premier multi-sport training facility. Elite coaching.
             World-class infrastructure. Built for the next generation of champions.
           </p>
         </div>
-        
+
         {/* COL 2: ARENA LINKS */}
         <div>
           <h4 className="footer-heading">Arena Links</h4>
@@ -65,9 +65,9 @@ export default function Footer() {
         <div className="footer-info-group">
           <h4 className="footer-heading">Visit Us</h4>
           <p className="footer-info-text">
-            <a 
-              href="https://maps.app.goo.gl/2KYR4nake6HgAnwL8" 
-              target="_blank" 
+            <a
+              href="https://maps.app.goo.gl/2KYR4nake6HgAnwL8"
+              target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--color-gold-primary)] transition-colors"
             >
@@ -89,18 +89,17 @@ export default function Footer() {
           <p className="text-[10px] text-[var(--color-gold-primary)] opacity-60 uppercase tracking-widest font-bold mt-2">
             * Timings will be changed according to the season
           </p>
-          
           <div className="footer-social-wrap gap-4">
-            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)', color: '#fff' }}>
+            <a href="https://www.instagram.com/zenithhsportsarena/" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)', color: '#fff' }}>
               <Instagram size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#000000', color: '#fff' }}>
+            <a href="https://www.facebook.com/profile.php?id=61592650591570" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#000000', color: '#fff' }}>
               <XIcon size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#FF0000', color: '#fff' }}>
+            <a href="https://x.com/ZenithhSports" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#FF0000', color: '#fff' }}>
               <Youtube size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#1877F2', color: '#fff' }}>
+            <a href="https://youtube.com/@zenithh-sports-arena?si=W8nXqSN6c9kQIRDI" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#1877F2', color: '#fff' }}>
               <Facebook size={20} />
             </a>
           </div>
