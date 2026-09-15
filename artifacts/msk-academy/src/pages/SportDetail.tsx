@@ -16,19 +16,19 @@ import SEO from "@/components/SEO";
    Internal sport IDs remain unchanged.
    ========================================================= */
 
-const SPORT_SLUGS: Record<string, string> = {
-  cricket: "box-cricket-miyapur",
-  pickleball: "pickleball-miyapur",
-  volleyball: "volleyball-miyapur",
-  chess: "chess-miyapur",
-  zumba: "zumba-miyapur",
-  "table-tennis": "table-tennis-miyapur",
-  foosball: "foosball-miyapur",
-  carrom: "carrom-miyapur",
-  "air-hockey": "air-hockey-miyapur",
-  "vr-cricket": "vr-cricket-miyapur",
-  "badminton-outdoor": "badminton-miyapur",
-};
+   const SPORT_SLUGS: Record<string, string> = {
+    cricket: "box-cricket-near-me-miyapur",
+    pickleball: "pickleball-court-near-me-miyapur",
+    volleyball: "volleyball-court-near-me-miyapur",
+    chess: "chess-club-near-me-miyapur",
+    zumba: "zumba-studio-near-me",
+    "table-tennis": "table-tennis-court-near-me-miyapur",
+    foosball: "foosball-near-me-miyapur",
+    carrom: "indoor-games-near-me-miyapur",
+    "air-hockey": "air-hockey-table-near-me-miyapur",
+    "vr-cricket": "vr-cricket-game-near-me-miyapur",
+    "badminton-outdoor": "badminton-court-near-me-miyapur",
+  };
 
 /* =========================================================
    SEO METADATA

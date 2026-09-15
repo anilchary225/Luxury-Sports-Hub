@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, Variants } from "framer-motion";
+import SEO from "../components/SEO";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -21,9 +22,19 @@ import {
  * A premium sports academy page with black + gold theme.
  */
 const MSKAcademy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
+  const seoTitle =
+  "MSK Prasad Cricket Academy | Ignite International Cricket Academy | Zenithh";
+
+const seoDescription =
+  "Join MSK Prasad Cricket Academy at Zenithh Sports Arena for professional cricket coaching, athletics training, academic excellence, and holistic athlete development.";
+
+const seoKeywords =
+  "MSK Prasad Cricket Academy, Ignite International Cricket Academy, cricket academy Miyapur, cricket coaching Miyapur, MSK Prasad cricket academy";
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   const fadeIn: Variants = {
     hidden: { opacity: 0, y: 30 },
@@ -58,6 +69,13 @@ const MSKAcademy = () => {
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-primary selection:text-[var(--text-inverse)]">
+
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonical="https://www.zenithh.com/msk-prasad-cricket-academy"
+      />
 
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background with Overlay */}

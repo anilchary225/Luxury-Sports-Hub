@@ -5,57 +5,62 @@
   "redirects": [
     {
       "source": "/sports/cricket",
-      "destination": "/sports/box-cricket-miyapur",
+      "destination": "/sports/box-cricket-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/pickleball",
-      "destination": "/sports/pickleball-miyapur",
+      "destination": "/sports/pickleball-court-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/volleyball",
-      "destination": "/sports/volleyball-miyapur",
+      "destination": "/sports/volleyball-court-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/chess",
-      "destination": "/sports/chess-miyapur",
+      "destination": "/sports/chess-club-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/zumba",
-      "destination": "/sports/zumba-miyapur",
+      "destination": "/sports/zumba-studio-near-me",
       "permanent": true
     },
     {
       "source": "/sports/table-tennis",
-      "destination": "/sports/table-tennis-miyapur",
+      "destination": "/sports/table-tennis-court-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/foosball",
-      "destination": "/sports/foosball-miyapur",
+      "destination": "/sports/foosball-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/carrom",
-      "destination": "/sports/carrom-miyapur",
+      "destination": "/sports/indoor-games-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/air-hockey",
-      "destination": "/sports/air-hockey-miyapur",
+      "destination": "/sports/air-hockey-table-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/vr-cricket",
-      "destination": "/sports/vr-cricket-miyapur",
+      "destination": "/sports/vr-cricket-game-near-me-miyapur",
       "permanent": true
     },
     {
       "source": "/sports/badminton-outdoor",
-      "destination": "/sports/badminton-miyapur",
+      "destination": "/sports/badminton-court-near-me-miyapur",
+      "permanent": true
+    },
+    {
+      "source": "/msk-academy",
+      "destination": "/msk-prasad-cricket-academy",
       "permanent": true
     }
   ],

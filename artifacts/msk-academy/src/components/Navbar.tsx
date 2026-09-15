@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
-  { label: "MSK Academy", path: "/msk-academy" },
+  { label: "MSK Academy", path: "/msk-prasad-cricket-academy" },
   { label: "About", path: "/about" },
   { label: "Sports", path: "/sports" },
   { label: "Coaches", path: "/coaches" },
@@ -75,7 +75,7 @@ export default function Navbar() {
       <ul className={`navbar-menu ${isMobileMenuOpen ? 'show' : ''}`}>
         {NAV_LINKS.map((link) => (
           <li key={link.label}>
-            {link.path === "/msk-academy" ? (
+            {link.path === "/msk-prasad-cricket-academy" ? (
               <Link
                 to={link.path}
                 className={`nav-item nav-msk-unique ${location.pathname === link.path ? 'active' : ''}`}

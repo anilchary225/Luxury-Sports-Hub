@@ -92,6 +92,20 @@ const SPORTS_OVERVIEW = [
   { id: "badminton-outdoor", title: "Badminton", img: "/images/badminton.webp" },
 ];
 
+const SPORT_SLUGS: Record<string, string> = {
+  cricket: "box-cricket-near-me-miyapur",
+  pickleball: "pickleball-court-near-me-miyapur",
+  volleyball: "volleyball-court-near-me-miyapur",
+  chess: "chess-club-near-me-miyapur",
+  zumba: "zumba-studio-near-me",
+  "table-tennis": "table-tennis-court-near-me-miyapur",
+  foosball: "foosball-near-me-miyapur",
+  carrom: "indoor-games-near-me-miyapur",
+  "air-hockey": "air-hockey-table-near-me-miyapur",
+  "vr-cricket": "vr-cricket-game-near-me-miyapur",
+  "badminton-outdoor": "badminton-court-near-me-miyapur",
+};
+
 const STATS = [
   { icon: <Users className="w-7 h-7" />, value: "500+", label: "Active Athletes" },
   { icon: <Trophy className="w-7 h-7" />, value: "Elite", label: "National Coaching" },
@@ -271,8 +285,7 @@ export default function Home() {
 
             {/* Description */}
             <p className="hero-desc hero-subtitle text-sm sm:text-base md:text-[18px] text-white/80 mb-4 max-w-[560px] font-light leading-[1.6] sm:leading-[1.7]">
-              Hyderabad's premier multi-sport training facility — combining world-class coaching, professional infrastructure, and 9 sports disciplines under one roof.
-            </p>
+            Hyderabad's premier multi-sport training facility — combining world-class coaching, professional infrastructure, and 11 sports disciplines under one roof.            </p>
 
             {/* Sport Tags Staggered */}
             <div className="sports-tags flex flex-wrap justify-start gap-x-3 sm:gap-x-6 gap-y-2 sm:gap-y-3 mb-6 sm:mb-8 text-[10px] sm:text-[13px] tracking-[0.05em]">
@@ -318,7 +331,7 @@ export default function Home() {
               <p className="text-[var(--text-muted)] text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl">
                 Delivering elite cricket coaching through expert knowledge, structured training, and world-class facilities in collaboration with Zenithh Sports Arena.
               </p>
-              <Link to="/msk-academy" className="group inline-flex items-center gap-4 text-[var(--color-gold-primary)] font-black uppercase tracking-widest text-sm py-4 px-8 border border-[var(--color-gold-primary)] hover:bg-[var(--color-gold-primary)] hover:text-black transition-all">
+              <Link to="/msk-prasad-cricket-academy" className="group inline-flex items-center gap-4 text-[var(--color-gold-primary)] font-black uppercase tracking-widest text-sm py-4 px-8 border border-[var(--color-gold-primary)] hover:bg-[var(--color-gold-primary)] hover:text-black transition-all">
                 Explore MSK Academy <ArrowRight className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
@@ -348,8 +361,11 @@ export default function Home() {
             {/* Row 1: 6 cards */}
             <div className="sports-row-1">
               {SPORTS_OVERVIEW.slice(0, 6).map((sport, i) => (
-                <Link to={`/sports/${sport.id}`} key={i} className="sport-card premium-image-hover group">
-                  <img
+                <Link
+                  to={`/sports/${SPORT_SLUGS[sport.id]}`}
+                  key={i}
+                  className="sport-card premium-image-hover group"
+                >                  <img
                     src={sport.img}
                     alt={sport.title}
                     onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/gallery-hero.webp'; }}

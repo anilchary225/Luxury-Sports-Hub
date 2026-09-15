@@ -10,6 +10,7 @@ function ScrollToTop() {
 
   return null;
 }
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -42,34 +43,57 @@ function AppRouter() {
       <CustomCursor />
       <ThemeToggle />
       <Navbar />
+
       <main className="flex-grow">
-        <Suspense fallback={
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--bg-primary)]">
-            <div className="h-1 bg-primary absolute top-1/2 left-0 -translate-y-1/2 w-1/2 animate-pulse" />
-            <h1 className="text-primary text-3xl md:text-5xl font-bold tracking-widest uppercase animate-pulse">
-              LOADING
-            </h1>
-          </div>
-        }>
+        <Suspense
+          fallback={
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--bg-primary)]">
+              <div className="h-1 bg-primary absolute top-1/2 left-0 -translate-y-1/2 w-1/2 animate-pulse" />
+
+              <h1 className="text-primary text-3xl md:text-5xl font-bold tracking-widest uppercase animate-pulse">
+                LOADING
+              </h1>
+            </div>
+          }
+        >
           <Routes>
             <Route path="/" element={<Home />} />
+
             <Route path="/about" element={<About />} />
+
             <Route path="/sports" element={<Sports />} />
+
             <Route
               path="/sports/:sportSlug"
               element={<SportDetail />}
             />
+
             <Route path="/facilities" element={<Facilities />} />
-            <Route path="/msk-academy" element={<MSKAcademy />} />
+
+            {/* SEO-friendly MSK Prasad Cricket Academy URL */}
+            <Route
+              path="/msk-prasad-cricket-academy"
+              element={<MSKAcademy />}
+            />
+
             <Route path="/events" element={<Events />} />
+
             <Route path="/gallery" element={<Gallery />} />
+
             <Route path="/contact" element={<Contact />} />
+
             <Route path="/coaches" element={<Coaches />} />
-            <Route path="/coaches/:id" element={<CoachProfile />} />
+
+            <Route
+              path="/coaches/:id"
+              element={<CoachProfile />}
+            />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
+
       <Footer />
     </div>
   );
@@ -79,11 +103,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <BrowserRouter
+          basename={import.meta.env.BASE_URL.replace(/\/$/, "")}
+        >
           <ScrollToTop />
+
           {/* <SportsMeetDialog /> */}
+
           <AppRouter />
         </BrowserRouter>
+
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
