@@ -273,7 +273,7 @@ export default function Home() {
               ref={heroEyebrowRef}
               className="hero-eyebrow text-[#D4A017] font-bold tracking-[0.15em] sm:tracking-[0.3em] uppercase mb-4 block text-[9px] sm:text-[11px]"
             >
-              ZENITHH SPORTS ARENA — WHERE LIMITS END, CHAMPIONS BEGIN
+              ZENITHH SPORTS ARENA - WHERE LIMITS END, CHAMPIONS BEGIN
             </span>
 
             {/* Main Title Heading */}
@@ -285,7 +285,7 @@ export default function Home() {
 
             {/* Description */}
             <p className="hero-desc hero-subtitle text-sm sm:text-base md:text-[18px] text-white/80 mb-4 max-w-[560px] font-light leading-[1.6] sm:leading-[1.7]">
-            Hyderabad's premier multi-sport training facility — combining world-class coaching, professional infrastructure, and 11 sports disciplines under one roof.            </p>
+            Hyderabad's premier multi-sport training facility - combining world-class coaching, professional infrastructure, and 11 sports disciplines under one roof.            </p>
 
             {/* Sport Tags Staggered */}
             <div className="sports-tags flex flex-wrap justify-start gap-x-3 sm:gap-x-6 gap-y-2 sm:gap-y-3 mb-6 sm:mb-8 text-[10px] sm:text-[13px] tracking-[0.05em]">
@@ -353,7 +353,7 @@ export default function Home() {
             </h2>
             <div className="section-title-line h-[1px] bg-linear-to-r from-transparent via-[var(--color-gold-primary)] to-transparent w-48 mx-auto mb-8" />
             <p className="text-[var(--text-muted)] max-w-2xl mx-auto text-lg font-light leading-relaxed">
-              From championship-grade cricket nets to professional indoor arcades — Zenithh Sports Arena provides the ultimate environment for athletic growth.
+              From championship-grade cricket nets to professional indoor arcades - Zenithh Sports Arena provides the ultimate environment for athletic growth.
             </p>
           </div>
 
@@ -606,7 +606,7 @@ export default function Home() {
             <span className="block mt-1">TODAY</span>
           </h2>
           <p className="text-[var(--text-muted)] text-lg md:text-xl mb-16 max-w-2xl mx-auto font-medium">
-            Partner with Zenithh Sports Arena — Hyderabad's most comprehensive multi-sport facility.
+            Partner with Zenithh Sports Arena - Hyderabad's most comprehensive multi-sport facility.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a

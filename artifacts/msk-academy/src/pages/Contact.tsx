@@ -150,7 +150,7 @@ export default function Contact() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-start">
 
-            {/* LEFT — INFO */}
+            {/* LEFT - INFO */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
               className="lg:col-span-2 flex flex-col pt-4"
@@ -231,7 +231,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* RIGHT — FORM */}
+            {/* RIGHT - FORM */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}

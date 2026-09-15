@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const VALUES = [
   { icon: <Target className="w-7 h-7" />, title: "Excellence", desc: "Every program and coach is held to the highest international standard of sports training." },
-  { icon: <Shield className="w-7 h-7" />, title: "Integrity", desc: "We develop athletes of character — honest competitors and resilient individuals." },
-  { icon: <Users className="w-7 h-7" />, title: "Inclusivity", desc: "Zenithh is for every aspiring athlete — regardless of fitness level or prior experience." },
+  { icon: <Shield className="w-7 h-7" />, title: "Integrity", desc: "We develop athletes of character - honest competitors and resilient individuals." },
+  { icon: <Users className="w-7 h-7" />, title: "Inclusivity", desc: "Zenithh is for every aspiring athlete - regardless of fitness level or prior experience." },
   { icon: <Activity className="w-7 h-7" />, title: "Innovation", desc: "Combining science-backed conditioning and modern coaching methodologies for maximum performance." },
   { icon: <TrendingUp className="w-7 h-7" />, title: "Growth", desc: "Structured pathways from beginner to competitive level ensure measurable development." },
-  { icon: <Award className="w-7 h-7" />, title: "Achievement", desc: "We celebrate every victory — from first rally completions to national championship podiums." }
+  { icon: <Award className="w-7 h-7" />, title: "Achievement", desc: "We celebrate every victory - from first rally completions to national championship podiums." }
 ];
 
 const MILESTONES = [
@@ -66,7 +66,7 @@ export default function About() {
                   Zenithh Sports Arena is an institution of athletic excellence. Founded in Hyderabad with a mission to create world-class infrastructure for serious athletes, schools, and colleges.
                 </p>
                 <p>
-                  We offer 9 professionally coached sports disciplines under one roof — supported by national-level coaches and a structured development pathway from beginner to elite performance.
+                  We offer 9 professionally coached sports disciplines under one roof - supported by national-level coaches and a structured development pathway from beginner to elite performance.
                 </p>
               </div>
               <div className="mt-8 md:mt-16">

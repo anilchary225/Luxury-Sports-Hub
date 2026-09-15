@@ -98,7 +98,7 @@
   }
 
   /* ================================================
-     GLOBAL RESET — APPLY TO ALL PAGES
+     GLOBAL RESET - APPLY TO ALL PAGES
      ================================================ */
   html {
     overflow-x: hidden;
@@ -175,7 +175,7 @@
     /* Widened for sophistication */
   }
 
-  /* Animated Grain Texture — Stabilized */
+  /* Animated Grain Texture - Stabilized */
   .bg-grain {
     position: relative;
   }
@@ -422,7 +422,7 @@
 
 @layer utilities {
   /* ================================================
-     NAVBAR — COMPLETE REBUILD
+     NAVBAR - COMPLETE REBUILD
      ================================================ */
 
   /* Reset any inherited styles that could break layout */
@@ -673,7 +673,7 @@
   }
 
   /* ================================================
-     FOOTER — PREMIUM RESTRUCTURE
+     FOOTER - PREMIUM RESTRUCTURE
      ================================================ */
   .main-footer {
     background: var(--bg-primary);
@@ -839,7 +839,7 @@
   }
 
   /* ================================================
-     HERO SECTION — PADDING FIX
+     HERO SECTION - PADDING FIX
      ================================================ */
   #home,
   .hero-section {
@@ -879,7 +879,7 @@
   }
 
   /* ================================================
-     SPORTS GRID — 5-4 LAYOUT
+     SPORTS GRID - 5-4 LAYOUT
      ================================================ */
   .sports-section {
     padding: 100px 80px;
@@ -1040,10 +1040,10 @@
   }
 
   /* ================================================
-     BUTTON STYLES — COMPLETE SET
+     BUTTON STYLES - COMPLETE SET
      ================================================ */
 
-  /* Type 1 — Primary (slash-cut diagonal edge) */
+  /* Type 1 - Primary (slash-cut diagonal edge) */
   .btn-primary {
     position: relative;
     display: inline-flex;
@@ -1081,7 +1081,7 @@
   }
 
 /* ══════════════════════════════════════════════════════════════
-   UTILITY BUTTONS — THEME AWARE
+   UTILITY BUTTONS - THEME AWARE
    ══════════════════════════════════════════════════════════════ */
 
 .btn-primary {
@@ -1112,7 +1112,7 @@
     transform: translateX(5px);
   }
 
-  /* Type 1 Highlighted — Extreme contrast for CTA sections */
+  /* Type 1 Highlighted - Extreme contrast for CTA sections */
   .btn-highlight {
     position: relative;
     display: inline-flex;
@@ -1170,7 +1170,7 @@
     transform: translateX(5px);
   }
 
-  /* Type 2 — Secondary (pill outline) */
+  /* Type 2 - Secondary (pill outline) */
   .btn-secondary {
     position: relative;
     display: inline-flex;
@@ -1227,7 +1227,7 @@
     transform: translateX(0);
   }
 
-  /* Type 3 — View Full Academy / Small CTA (outlined rounded-rect) */
+  /* Type 3 - View Full Academy / Small CTA (outlined rounded-rect) */
   .btn-outline {
     display: inline-flex;
     align-items: center;

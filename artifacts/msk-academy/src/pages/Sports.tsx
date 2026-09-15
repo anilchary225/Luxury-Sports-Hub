@@ -149,7 +149,7 @@ const SPORTS = [
     img: "/images/cricket.webp",
     tagline: "The Home of Elite Cricket Coaching in Hyderabad",
     description:
-      "Cricket is more than just a sport in India — it is a passion and a life-defining dream. At Zenithh Sports Arena, we channel that passion into precision performance. Our professional net facilities and structured performance pathways transform every aspiring cricketer into a confident, competition-ready athlete. Players searching for box cricket near me miyapur can enjoy quality turf practice, training, and competitive sessions at Zenithh. Our box cricket near me miyapur experience is designed for friends, teams, and aspiring players.",
+      "Cricket is more than just a sport in India - it is a passion and a life-defining dream. At Zenithh Sports Arena, we channel that passion into precision performance. Our professional net facilities and structured performance pathways transform every aspiring cricketer into a confident, competition-ready athlete. Players searching for box cricket near me miyapur can enjoy quality turf practice, training, and competitive sessions at Zenithh. Our box cricket near me miyapur experience is designed for friends, teams, and aspiring players.",
     features: [
       "Professional batting, bowling & fielding coaching",
       "Structured modules: Beginner → Intermediate → Advanced",
@@ -182,11 +182,11 @@ const SPORTS = [
     img: "/images/pickleball.webp",
     tagline: "The Fastest Growing Sport in Hyderabad",
     description:
-      "A dynamic sport brilliantly blending tennis, badminton, and table tennis — played on a badminton-sized court with a solid paddle and a perforated plastic ball. At Zenithh Sports Arena, we have built one of Hyderabad's premier pickleball training facilities to meet the rapidly growing demand for professional coaching. Players searching for Pickleball court near me Miyapur can enjoy professional facilities and structured play at Zenithh. Our Pickleball court near me Miyapur experience is suitable for recreational and competitive players.",
+      "A dynamic sport brilliantly blending tennis, badminton, and table tennis - played on a badminton-sized court with a solid paddle and a perforated plastic ball. At Zenithh Sports Arena, we have built one of Hyderabad's premier pickleball training facilities to meet the rapidly growing demand for professional coaching. Players searching for Pickleball court near me Miyapur can enjoy professional facilities and structured play at Zenithh. Our Pickleball court near me Miyapur experience is suitable for recreational and competitive players.",
     features: [
       "World-class pickleball courts with professional surfaces",
       "Certified coaches: technique, footwork & game strategy",
-      "Programs for all levels — beginner to competitive",
+      "Programs for all levels - beginner to competitive",
       "Strokes, dinking, volleying & court positioning",
       "Agility & fitness specific to pickleball movement",
       "Group classes, private coaching & drill sessions",
@@ -215,7 +215,7 @@ const SPORTS = [
     img: "/images/volleyball.webp",
     tagline: "Build Your Volleyball Game with Zenithh",
     description:
-      "Volleyball demands explosive athleticism, razor-sharp reflexes, and seamless teamwork. At Zenithh Sports Arena Hyderabad, our volleyball training program develops all these qualities — from grassroots beginners to competitive players targeting district and state representation. If you are searching for Volleyball Court Near Me Miyapur, Zenithh offers quality facilities for practice, matches, and team sessions. Our Volleyball Court Near Me Miyapur experience is designed for players of different skill levels.",
+      "Volleyball demands explosive athleticism, razor-sharp reflexes, and seamless teamwork. At Zenithh Sports Arena Hyderabad, our volleyball training program develops all these qualities - from grassroots beginners to competitive players targeting district and state representation. If you are searching for Volleyball Court Near Me Miyapur, Zenithh offers quality facilities for practice, matches, and team sessions. Our Volleyball Court Near Me Miyapur experience is designed for players of different skill levels.",
     features: [
       "Expert coaches with competitive credentials",
       "Serving, passing, setting, spiking & blocking training",
@@ -248,7 +248,7 @@ const SPORTS = [
     img: "/images/chess.webp",
     tagline: "Develop Strategic Brilliance at Zenithh",
     description:
-      "Chess is the ultimate test of strategic thinking, patience, and mental discipline. At Zenithh Sports Arena, our chess program develops cognitive excellence — from opening theory and tactical patterns to endgame mastery — helping students compete at scholastic, collegiate, and competitive levels. For anyone searching for Chess Club Near Me Miyapur, Zenithh provides an engaging environment for practice and competitive play. Our Chess Club Near Me Miyapur experience supports beginners through serious players.",
+      "Chess is the ultimate test of strategic thinking, patience, and mental discipline. At Zenithh Sports Arena, our chess program develops cognitive excellence - from opening theory and tactical patterns to endgame mastery - helping students compete at scholastic, collegiate, and competitive levels. For anyone searching for Chess Club Near Me Miyapur, Zenithh provides an engaging environment for practice and competitive play. Our Chess Club Near Me Miyapur experience supports beginners through serious players.",
     features: [
       "Structured curriculum: openings, middlegame & endgame",
       "Tactical pattern recognition training",
@@ -279,7 +279,7 @@ const SPORTS = [
     title: "Zumba",
     seoKeyword: "Zumba Studio Near Me",
     img: "/images/zumba.webp",
-    tagline: "Dance, Fitness & Energy — All in One",
+    tagline: "Dance, Fitness & Energy - All in One",
     description:
       "Zumba at Zenithh Sports Arena is where fitness meets dance in the most energizing way possible. Our certified Zumba instructors combine Latin-inspired dance rhythms with aerobic exercise principles to deliver high-energy sessions that improve fitness, coordination, and mental well-being. If you are searching for a Zumba Studio Near Me, Zenithh offers energetic sessions in an engaging environment. Our Zumba Studio Near Me classes are designed for different fitness levels.",
     features: [
@@ -347,14 +347,14 @@ const SPORTS = [
     img: "/images/foosball.webp",
     tagline: "Competitive Table Football at Its Best",
     description:
-      "Foosball (table football) at Zenithh Sports Arena goes beyond casual recreation. We coach the technical skills, strategic thinking, and reflexive control that competitive foosball demands — making it a serious sport within our multi-sport facility. If you are searching for Foosball Near Me Miyapur, Zenithh offers an exciting indoor gaming experience. Our Foosball Near Me Miyapur sessions are ideal for friends, groups, and competitive fun.",
+      "Foosball (table football) at Zenithh Sports Arena goes beyond casual recreation. We coach the technical skills, strategic thinking, and reflexive control that competitive foosball demands - making it a serious sport within our multi-sport facility. If you are searching for Foosball Near Me Miyapur, Zenithh offers an exciting indoor gaming experience. Our Foosball Near Me Miyapur sessions are ideal for friends, groups, and competitive fun.",
     features: [
       "Professional-standard foosball tables",
       "Singles and doubles competitive formats",
       "Rod control, shooting accuracy & ball control coaching",
       "Defensive wall techniques & counter-attack play",
       "Internal league play & tournaments",
-      "Suitable for all ages — great for group bonding",
+      "Suitable for all ages - great for group bonding",
       "Cognitive benefits: reaction time & spatial awareness",
     ],
     programs: [
@@ -380,7 +380,7 @@ const SPORTS = [
     img: "/images/carroms.webp",
     tagline: "Master India's Beloved Board Sport",
     description:
-      "Carrom is one of India's most beloved traditional sports — a game of precision, angles, and strategic thinking. At Zenithh Sports Arena, our carrom program provides professional coaching on competition-grade boards, helping players develop the accuracy, technique, and tactical awareness needed for high-level competitive play. If you are searching for Indoor Games Near Me Miyapur, Zenithh offers chess, carrom, foosball, table tennis and more. Our Indoor Games Near Me Miyapur experience is ideal for friends, families, and players.",
+      "Carrom is one of India's most beloved traditional sports - a game of precision, angles, and strategic thinking. At Zenithh Sports Arena, our carrom program provides professional coaching on competition-grade boards, helping players develop the accuracy, technique, and tactical awareness needed for high-level competitive play. If you are searching for Indoor Games Near Me Miyapur, Zenithh offers chess, carrom, foosball, table tennis and more. Our Indoor Games Near Me Miyapur experience is ideal for friends, families, and players.",
     features: [
       "Competition-grade carrom boards",
       "Professional striking technique coaching",
@@ -388,7 +388,7 @@ const SPORTS = [
       "Individual and doubles competitive formats",
       "Board management & opponent strategy reading",
       "Internal tournaments & competitive exposure",
-      "Suitable for all ages — deeply rooted in Indian culture",
+      "Suitable for all ages - deeply rooted in Indian culture",
     ],
     programs: [
       {
@@ -413,7 +413,7 @@ const SPORTS = [
     img: "/images/air-hockey.webp",
     tagline: "Lightning Reflexes. Unstoppable Action.",
     description:
-      "Zenithh Sports Arena's Astro Air Hockey Arcade brings one of the most thrilling arcade sports experiences to Hyderabad. Fast-paced, reflex-driven, and endlessly competitive — our air hockey setup provides the ultimate recreational sports experience alongside our elite training programs. If you are searching for Air Hockey Table Near Me Miyapur, Zenithh offers an exciting indoor gaming experience. Our Air Hockey Table Near Me Miyapur sessions are ideal for friends, families, and groups.",
+      "Zenithh Sports Arena's Astro Air Hockey Arcade brings one of the most thrilling arcade sports experiences to Hyderabad. Fast-paced, reflex-driven, and endlessly competitive - our air hockey setup provides the ultimate recreational sports experience alongside our elite training programs. If you are searching for Air Hockey Table Near Me Miyapur, Zenithh offers an exciting indoor gaming experience. Our Air Hockey Table Near Me Miyapur sessions are ideal for friends, families, and groups.",
     features: [
       "Professional air hockey arcade tables",
       "Fast-paced competitive gameplay",
@@ -983,7 +983,7 @@ export default function SportsPage() {
             </h2>
 
             <p className="text-[var(--text-inverse)]/60 text-lg mb-12 max-w-2xl mx-auto font-medium">
-              Join Zenithh Sports Arena today —
+              Join Zenithh Sports Arena today -
               Hyderabad's premier multi-sport training
               facility for schools, colleges, and serious
               athletes.
