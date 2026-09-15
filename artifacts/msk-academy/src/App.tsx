@@ -55,7 +55,10 @@ function AppRouter() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/sports" element={<Sports />} />
-            <Route path="/sports/:sportId" element={<SportDetail />} />
+            <Route
+              path="/sports/:sportSlug"
+              element={<SportDetail />}
+            />
             <Route path="/facilities" element={<Facilities />} />
             <Route path="/msk-academy" element={<MSKAcademy />} />
             <Route path="/events" element={<Events />} />
