@@ -796,6 +796,11 @@
     transform: translateY(-3px);
   }
 
+  .footer-social-instagram { background: linear-gradient(135deg, #833AB4, #E1306C, #F77737); }
+  .footer-social-facebook { background-color: #1877F2; }
+  .footer-social-x { background-color: #000; }
+  .footer-social-youtube { background-color: #F00; }
+
   .footer-bottom {
     max-width: 1380px;
     margin: 40px auto 0;

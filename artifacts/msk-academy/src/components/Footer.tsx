@@ -19,9 +19,12 @@ export default function Footer() {
         <div className="footer-branding">
           <Link to="/">
             <img loading="lazy"
-              src="/images/logo_final.png"
+              src="/images/logo_final.webp"
               alt="Zenithh Sports Arena"
               className="footer-logo logo-glow"
+              width="240"
+              height="80"
+              decoding="async"
             />
           </Link>
           <p>
@@ -32,7 +35,7 @@ export default function Footer() {
 
         {/* COL 2: ARENA LINKS */}
         <div>
-          <h4 className="footer-heading">Arena Links</h4>
+          <h2 className="footer-heading">Arena Links</h2>
           <ul className="footer-links-list">
             {[
               { label: "Our Story", path: "/about" },
@@ -51,7 +54,7 @@ export default function Footer() {
         
         {/* COL 3: DISCIPLINES */}
         <div>
-          <h4 className="footer-heading">Disciplines</h4>
+          <h2 className="footer-heading">Disciplines</h2>
           <ul className="footer-links-list">
             {["Cricket", "Pickleball", "Volleyball", "Chess", "Zumba", "Table Tennis", "Carrom", "VR Cricket", "Badminton Outdoor"].map((sport) => (
               <li key={sport} className="footer-link-item">
@@ -63,7 +66,7 @@ export default function Footer() {
 
         {/* COL 4: VISIT US */}
         <div className="footer-info-group">
-          <h4 className="footer-heading">Visit Us</h4>
+          <h2 className="footer-heading">Visit Us</h2>
           <p className="footer-info-text">
             <a
               href="https://maps.app.goo.gl/2KYR4nake6HgAnwL8"
@@ -90,17 +93,17 @@ export default function Footer() {
             * Timings will be changed according to the season
           </p>
           <div className="footer-social-wrap gap-4">
-            <a href="https://www.instagram.com/zenithhsportsarena/" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ background: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)', color: '#fff' }}>
+            <a href="https://www.instagram.com/zenithhsportsarena/" aria-label="Zenithh Sports Arena on Instagram" className="footer-social-link footer-social-instagram">
               <Instagram size={20} />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61592650591570" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#000000', color: '#fff' }}>
+            <a href="https://www.facebook.com/profile.php?id=61592650591570" aria-label="Zenithh Sports Arena on Facebook" className="footer-social-link footer-social-facebook">
+              <Facebook size={20} />
+            </a>
+            <a href="https://x.com/ZenithhSports" aria-label="Zenithh Sports Arena on X" className="footer-social-link footer-social-x">
               <XIcon size={18} />
             </a>
-            <a href="https://x.com/ZenithhSports" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#FF0000', color: '#fff' }}>
+            <a href="https://youtube.com/@zenithh-sports-arena?si=W8nXqSN6c9kQIRDI" aria-label="Zenithh Sports Arena on YouTube" className="footer-social-link footer-social-youtube">
               <Youtube size={20} />
-            </a>
-            <a href="https://youtube.com/@zenithh-sports-arena?si=W8nXqSN6c9kQIRDI" className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" style={{ backgroundColor: '#1877F2', color: '#fff' }}>
-              <Facebook size={20} />
             </a>
           </div>
         </div>

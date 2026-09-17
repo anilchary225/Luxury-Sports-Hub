@@ -10,25 +10,16 @@ import {
 import FAQSection from "@/components/FAQSection";
 import { SPORTS_FAQS } from "@/constants/faqs";
 import SEO from "@/components/SEO";
+import { SPORT_SEO } from "@/data/seo";
 
 /* =========================================================
    SEO-FRIENDLY SPORT SLUGS
    Internal sport IDs remain unchanged.
    ========================================================= */
 
-   const SPORT_SLUGS: Record<string, string> = {
-    cricket: "box-cricket-near-me-miyapur",
-    pickleball: "pickleball-court-near-me-miyapur",
-    volleyball: "volleyball-court-near-me-miyapur",
-    chess: "chess-club-near-me-miyapur",
-    zumba: "zumba-studio-near-me",
-    "table-tennis": "table-tennis-court-near-me-miyapur",
-    foosball: "foosball-near-me-miyapur",
-    carrom: "indoor-games-near-me-miyapur",
-    "air-hockey": "air-hockey-table-near-me-miyapur",
-    "vr-cricket": "vr-cricket-game-near-me-miyapur",
-    "badminton-outdoor": "badminton-court-near-me-miyapur",
-  };
+const SPORT_SLUGS: Record<string, string> = Object.fromEntries(
+  Object.entries(SPORT_SEO).map(([sportId, seo]) => [sportId, seo.slug])
+);
 
 /* =========================================================
    SEO METADATA
@@ -445,7 +436,7 @@ export default function SportDetail() {
    * It can contain either:
    *
    * NEW:
-   * /sports/box-cricket-miyapur
+   * /sports/box-cricket-near-me-miyapur
    *
    * OLD:
    * /sports/cricket
@@ -823,6 +814,7 @@ export default function SportDetail() {
 
                         <img
                           loading="lazy"
+                          decoding="async"
                           src={img}
                           alt={`${sport.title} Gallery ${
                             idx + 1

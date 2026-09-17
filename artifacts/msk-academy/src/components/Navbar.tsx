@@ -54,9 +54,12 @@ export default function Navbar() {
       {/* LEFT: Logo */}
       <Link to="/" className="navbar-logo-link">
         <img
-          src="/images/logo_final.png"
+          src="/images/logo_final.webp"
           alt="Zenithh Sports Arena"
           className="navbar-logo"
+          width="240"
+          height="80"
+          decoding="async"
         />
       </Link>
 

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import FAQSection from "@/components/FAQSection";
 import { SPORTS_FAQS } from "@/constants/faqs";
 import SEO from "@/components/SEO";
+import { SPORT_SEO } from "@/data/seo";
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -123,19 +124,9 @@ const SEO_METADATA: Record<
    Internal sport IDs remain unchanged.
    ========================================================= */
 
-   const SPORT_SLUGS: Record<string, string> = {
-    cricket: "box-cricket-near-me-miyapur",
-    pickleball: "pickleball-court-near-me-miyapur",
-    volleyball: "volleyball-court-near-me-miyapur",
-    chess: "chess-club-near-me-miyapur",
-    zumba: "zumba-studio-near-me",
-    "table-tennis": "table-tennis-court-near-me-miyapur",
-    foosball: "foosball-near-me-miyapur",
-    carrom: "indoor-games-near-me-miyapur",
-    "air-hockey": "air-hockey-table-near-me-miyapur",
-    "vr-cricket": "vr-cricket-game-near-me-miyapur",
-    "badminton-outdoor": "badminton-court-near-me-miyapur",
-  };
+const SPORT_SLUGS: Record<string, string> = Object.fromEntries(
+  Object.entries(SPORT_SEO).map(([sportId, seo]) => [sportId, seo.slug])
+);
 
 /* =========================================================
    SPORTS DATA
@@ -500,20 +491,6 @@ const SPORTS = [
 
 export default function SportsPage() {
   const currentPath = window.location.pathname.replace(/\/$/, "");
-
-  const SPORT_SLUGS: Record<string, string> = {
-    cricket: "box-cricket-miyapur",
-    pickleball: "pickleball-miyapur",
-    volleyball: "volleyball-miyapur",
-    chess: "chess-miyapur",
-    zumba: "zumba-miyapur",
-    "table-tennis": "table-tennis-miyapur",
-    foosball: "foosball-miyapur",
-    carrom: "carrom-miyapur",
-    "air-hockey": "air-hockey-miyapur",
-    "vr-cricket": "vr-cricket-miyapur",
-    "badminton-outdoor": "badminton-miyapur",
-  };
   const sportSlug = currentPath.startsWith("/sports/")
     ? currentPath.split("/").filter(Boolean)[1]
     : undefined;
@@ -583,6 +560,14 @@ export default function SportsPage() {
           canonical={`https://www.zenithh.com/sports/${canonicalSlug || sportSlug}`}
         />
       )}
+      {!currentSEO && (
+        <SEO
+          title="Sports Academy & Courts Near Miyapur | Zenithh"
+          description="Explore cricket, pickleball, volleyball, badminton, table tennis, fitness, and indoor games at Zenithh Sports Arena near Miyapur."
+          keywords="sports academy Miyapur, sports courts Miyapur, cricket, pickleball, badminton, volleyball"
+          canonical="https://www.zenithh.com/sports"
+        />
+      )}
 
       {/* =====================================================
           PAGE
@@ -597,7 +582,6 @@ export default function SportsPage() {
         <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-12 overflow-hidden bg-grain">
           <div className="absolute inset-0 z-0">
             <img
-              loading="lazy"
               src="/images/about-hero.webp"
               alt="Zenithh Sports Arena"
               className="w-full h-full object-cover"
@@ -729,6 +713,7 @@ export default function SportsPage() {
                   >
                     <img
                       loading="lazy"
+                      decoding="async"
                       src={sport.img}
                       alt={sport.title}
                       className="w-full h-full object-cover"
@@ -798,6 +783,8 @@ export default function SportsPage() {
                     <img
                       src={sport.img}
                       alt={sport.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.currentTarget.onerror = null;

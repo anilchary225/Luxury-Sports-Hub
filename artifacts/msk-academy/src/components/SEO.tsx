@@ -14,23 +14,23 @@ const SEO = ({
   canonical,
 }: SEOProps) => {
   useEffect(() => {
-    // Title
+    // Page title
     document.title = title;
 
-    // Description
+    // Meta description
     let descriptionTag = document.querySelector(
       'meta[name="description"]'
     ) as HTMLMetaElement | null;
 
     if (!descriptionTag) {
       descriptionTag = document.createElement("meta");
-      descriptionTag.setAttribute("name", "description");
+      descriptionTag.name = "description";
       document.head.appendChild(descriptionTag);
     }
 
-    descriptionTag.setAttribute("content", description);
+    descriptionTag.content = description;
 
-    // Keywords
+    // Meta keywords
     if (keywords) {
       let keywordsTag = document.querySelector(
         'meta[name="keywords"]'
@@ -38,14 +38,14 @@ const SEO = ({
 
       if (!keywordsTag) {
         keywordsTag = document.createElement("meta");
-        keywordsTag.setAttribute("name", "keywords");
+        keywordsTag.name = "keywords";
         document.head.appendChild(keywordsTag);
       }
 
-      keywordsTag.setAttribute("content", keywords);
+      keywordsTag.content = keywords;
     }
 
-    // Canonical
+    // Canonical URL
     if (canonical) {
       let canonicalTag = document.querySelector(
         'link[rel="canonical"]'
@@ -53,11 +53,11 @@ const SEO = ({
 
       if (!canonicalTag) {
         canonicalTag = document.createElement("link");
-        canonicalTag.setAttribute("rel", "canonical");
+        canonicalTag.rel = "canonical";
         document.head.appendChild(canonicalTag);
       }
 
-      canonicalTag.setAttribute("href", canonical);
+      canonicalTag.href = canonical;
     }
   }, [title, description, keywords, canonical]);
 

@@ -4,6 +4,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, ArrowRight, CheckCircle, Trophy, Users, Award, Clock } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SEO from "@/components/SEO";
 // import CoachCard from "@/components/CoachCard";
 // import { COACHES_DATA } from "@/data/coaches";
 // import backgroundvideo from '../../public/videos/hero-background.webm'
@@ -247,7 +248,14 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-primary selection:text-[var(--text-inverse)]">
+    <>
+      <SEO
+        title="Zenithh Sports Arena | Sports & Fitness Near Miyapur"
+        description="Zenithh Sports Arena in Hyderabad offers cricket, pickleball, volleyball, badminton, table tennis, fitness and sports coaching near Miyapur."
+        keywords="sports arena Miyapur, cricket turf Miyapur, pickleball Miyapur, badminton Miyapur, sports academy Hyderabad"
+        canonical="https://www.zenithh.com/"
+      />
+      <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-primary selection:text-[var(--text-inverse)]">
 
       {/* ═══ HERO ═══ */}
       <section id="home" ref={heroContentRef} className="hero-section relative min-h-[100vh] w-full flex items-center pt-[80px] pb-[40px] px-6 md:px-[80px] overflow-hidden">
@@ -257,7 +265,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 z-0 h-full w-full object-cover"
         >
           <source src="/videos/hero-background.webm" type="video/webm" />
@@ -337,7 +345,7 @@ export default function Home() {
             </div>
             <div className="w-full lg:w-2/5">
               <div className="premium-image-hover aspect-video md:aspect-[4/3] border border-[var(--color-gold-primary)]/30">
-                <img loading="lazy" src="/images/msk_cricket_academy.webp" alt="MSK Cricket Academy" className="w-full h-full object-cover object-top" />
+                <img loading="lazy" decoding="async" src="/images/msk_cricket_academy.webp" alt="MSK Cricket Academy" className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </motion.div>
@@ -368,6 +376,8 @@ export default function Home() {
                 >                  <img
                     src={sport.img}
                     alt={sport.title}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/gallery-hero.webp'; }}
                   />
                   <div className="sport-card-overlay">
@@ -381,10 +391,12 @@ export default function Home() {
             {/* Row 2: 5 cards */}
             <div className="sports-row-2">
               {SPORTS_OVERVIEW.slice(6, 11).map((sport, i) => (
-                <Link to={`/sports/${sport.id}`} key={i} className="sport-card premium-image-hover group">
+                <Link to={`/sports/${SPORT_SLUGS[sport.id]}`} key={i} className="sport-card premium-image-hover group">
                   <img
                     src={sport.img}
                     alt={sport.title}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/gallery-hero.webp'; }}
                   />
                   <div className="sport-card-overlay">
@@ -525,6 +537,8 @@ export default function Home() {
                 <img
                   src="/images/about-arena.webp"
                   alt="Zenithh Sports Arena Facilities"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
                 />
                 {/* Minimalist accents */}
@@ -624,6 +638,7 @@ export default function Home() {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 }
