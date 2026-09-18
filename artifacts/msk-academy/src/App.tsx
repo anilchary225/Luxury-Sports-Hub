@@ -1,6 +1,13 @@
 import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
+import { Toaster } from "@/components/ui/toaster";
+
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import ThemeToggle from "@/components/ThemeToggle";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -10,16 +17,6 @@ function ScrollToTop() {
 
   return null;
 }
-
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
-import ThemeToggle from "@/components/ThemeToggle";
-import SportsMeetDialog from "@/components/SportsMeetDialog";
 
 // Lazy loaded pages
 const Home = lazy(() => import("@/pages/Home"));
@@ -35,7 +32,7 @@ const CoachProfile = lazy(() => import("@/pages/CoachProfile"));
 const SportDetail = lazy(() => import("@/pages/SportDetail"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
 function AppRouter() {
   return (
@@ -101,8 +98,8 @@ function AppRouter() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
+    
+      
         <BrowserRouter
           basename={import.meta.env.BASE_URL.replace(/\/$/, "")}
         >
@@ -111,11 +108,12 @@ function App() {
           {/* <SportsMeetDialog /> */}
 
           <AppRouter />
+          <Toaster />
         </BrowserRouter>
 
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+        
+      
+    
   );
 }
 

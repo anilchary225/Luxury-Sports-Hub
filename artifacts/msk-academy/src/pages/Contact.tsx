@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -44,26 +44,27 @@ const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
 };
+const formSchema = z.object({
+  name: z.string().min(2, "Name is required"),
+  email: z.string().trim().email("Invalid email address"),
+  phone: z.string().min(10, "Valid phone number is required"),
+  sport: z.string().min(1, "Please select a sport/program"),
+  enquiryType: z.string().min(1, "Please select an enquiry type"),
+  institution: z.string().optional(),
+  preferredTiming: z.string().optional(),
+  attendanceType: z.string().min(1, "Please select attendance type"),
+  numberOfAttendees: z.string().optional(),
+  friendReferral: z.string().optional(),
+  referralMobile: z.string().optional(),
+  referralEmail: z.string().optional(),
+  message: z.string().min(10, "Message must be at least 10 characters")
+});
 
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  const formSchema = z.object({
-    name: z.string().min(2, "Name is required"),
-    email: z.string().trim().email("Invalid email address"),
-    phone: z.string().min(10, "Valid phone number is required"),
-    sport: z.string().min(1, "Please select a sport/program"),
-    enquiryType: z.string().min(1, "Please select an enquiry type"),
-    institution: z.string().optional(),
-    preferredTiming: z.string().optional(),
-    attendanceType: z.string().min(1, "Please select attendance type"),
-    numberOfAttendees: z.string().optional(),
-    friendReferral: z.string().optional(),
-    referralMobile: z.string().optional(),
-    referralEmail: z.string().optional(),
-    message: z.string().min(10, "Message must be at least 10 characters")
-  });
+  
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

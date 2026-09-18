@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { gsap } from "gsap";
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
@@ -10,29 +9,21 @@ const NAV_LINKS = [
   { label: "Coaches", path: "/coaches" },
   { label: "Facilities", path: "/facilities" },
   { label: "Events", path: "/events" },
-  { label: "Gallery", path: "/gallery" }
+  { label: "Gallery", path: "/gallery" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navbarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // ---- Scroll detection ----
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // ---- Entry animation (GSAP) ----
-    if (navbarRef.current) {
-      gsap.fromTo(navbarRef.current,
-        { y: -80, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', delay: 0.3, clearProps: "transform" }
-      );
-    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -47,10 +38,10 @@ export default function Navbar() {
   return (
     <nav
       id="main-navbar"
-      ref={navbarRef}
-      className={`${isScrolled ? 'scrolled' : ''} ${isMobileMenuOpen ? 'mobile-menu-active' : ''}`}
+      className={`${isScrolled ? "scrolled" : ""} ${
+        isMobileMenuOpen ? "mobile-menu-active" : ""
+      }`}
     >
-
       {/* LEFT: Logo */}
       <Link to="/" className="navbar-logo-link">
         <img
@@ -69,26 +60,34 @@ export default function Navbar() {
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label="Toggle Menu"
       >
-        <span className={isMobileMenuOpen ? 'open' : ''}></span>
-        <span className={isMobileMenuOpen ? 'open' : ''}></span>
-        <span className={isMobileMenuOpen ? 'open' : ''}></span>
+        <span className={isMobileMenuOpen ? "open" : ""}></span>
+        <span className={isMobileMenuOpen ? "open" : ""}></span>
+        <span className={isMobileMenuOpen ? "open" : ""}></span>
       </button>
 
       {/* CENTER: Navigation Links */}
-      <ul className={`navbar-menu ${isMobileMenuOpen ? 'show' : ''}`}>
+      <ul
+        className={`navbar-menu ${
+          isMobileMenuOpen ? "show" : ""
+        }`}
+      >
         {NAV_LINKS.map((link) => (
           <li key={link.label}>
             {link.path === "/msk-prasad-cricket-academy" ? (
               <Link
                 to={link.path}
-                className={`nav-item nav-msk-unique ${location.pathname === link.path ? 'active' : ''}`}
+                className={`nav-item nav-msk-unique ${
+                  location.pathname === link.path ? "active" : ""
+                }`}
               >
                 {link.label}
               </Link>
             ) : (
               <Link
                 to={link.path}
-                className={`nav-item ${location.pathname === link.path ? 'active' : ''}`}
+                className={`nav-item ${
+                  location.pathname === link.path ? "active" : ""
+                }`}
               >
                 {link.label}
               </Link>
@@ -120,7 +119,6 @@ export default function Navbar() {
           Register
         </a>
       </div>
-
     </nav>
   );
 }

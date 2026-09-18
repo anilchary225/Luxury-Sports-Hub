@@ -49,7 +49,7 @@ export default function About() {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
             <div className="w-full lg:w-1/2 relative group">
               <div className="premium-image-hover relative aspect-[4/3] overflow-hidden rounded-lg border border-[var(--border-light)]">
-                <img loading="lazy" src="/images/about-interior.webp" alt="Zenithh Arena Interior" className="w-full h-full object-cover" />
+                <img loading="lazy" src="/images/about-interior-optimized.webp" alt="Zenithh Arena Interior" className="w-full h-full object-cover" />
                 <div className="absolute top-8 left-8 bg-[var(--color-gold-primary)] text-[var(--text-inverse)] text-[10px] font-black uppercase tracking-[0.3em] px-5 py-3">EST. 2026</div>
               </div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-t border-l border-[var(--color-gold-primary)]/30 z-10 pointer-events-none" />

@@ -8,6 +8,17 @@ const XIcon = ({ size = 24 }: { size?: number }) => (
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
+const SPORT_LINKS = [
+  { label: "Cricket", slug: "box-cricket-near-me-miyapur" },
+  { label: "Pickleball", slug: "pickleball-court-near-me-miyapur" },
+  { label: "Volleyball", slug: "volleyball-court-near-me-miyapur" },
+  { label: "Chess", slug: "chess-club-near-me-miyapur" },
+  { label: "Zumba", slug: "zumba-studio-near-me" },
+  { label: "Table Tennis", slug: "table-tennis-court-near-me-miyapur" },
+  { label: "Carrom", slug: "indoor-games-near-me-miyapur" },
+  { label: "VR Cricket", slug: "vr-cricket-game-near-me-miyapur" },
+  { label: "Badminton Outdoor", slug: "badminton-court-near-me-miyapur" },
+];
 
 export default function Footer() {
   return (
@@ -56,11 +67,13 @@ export default function Footer() {
         <div>
           <h2 className="footer-heading">Disciplines</h2>
           <ul className="footer-links-list">
-            {["Cricket", "Pickleball", "Volleyball", "Chess", "Zumba", "Table Tennis", "Carrom", "VR Cricket", "Badminton Outdoor"].map((sport) => (
-              <li key={sport} className="footer-link-item">
-                <Link to="/sports" className="footer-link">{sport}</Link>
-              </li>
-            ))}
+          {SPORT_LINKS.map((sport) => (
+            <li key={sport.label} className="footer-link-item">
+              <Link to={`/sports/${sport.slug}`} className="footer-link">
+                {sport.label}
+              </Link>
+            </li>
+          ))}
           </ul>
         </div>
 

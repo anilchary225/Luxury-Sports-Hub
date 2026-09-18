@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 const FACILITIES = [
   {
     title: "Indoor Cricket Nets",
-    img: "/images/facility-indoor.png",
+    img: "/images/facility-indoor.webp",
     desc: "Professional net practice bays with pitch simulation, bowling machine infrastructure, and batting crease markings. Year-round weather-independent training.",
     features: ["Multiple net bays", "Pitch simulation surface", "High-quality netting", "LED sports lighting"]
   },
@@ -35,7 +35,7 @@ const FACILITIES = [
   },
   {
     title: "Fitness Studio",
-    img: "/images/zumba.webp",
+    img: "/images/zumba-card.webp",
     desc: "A spacious, mirror-lined studio with professional flooring, high-quality sound systems, and climate control — perfect for Zumba classes and fitness programs.",
     features: ["Mirror-lined walls", "Pro sound system", "Climate controlled", "Cushioned flooring"]
   }

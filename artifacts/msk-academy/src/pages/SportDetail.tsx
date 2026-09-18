@@ -132,7 +132,7 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "Cricket",
     seoKeyword: "box cricket near me miyapur",
     subtitle: "Premium Cricket Nets & Coaching",
-    heroImage: "/images/cricket.webp",
+    heroImage: "/images/cricket-card.webp",
 
     description:
       "Experience world-class cricket training at Zenithh Sports Arena. Our facility features professional-grade nets, high-speed bowling machines, and expert coaching designed to refine your technique and elevate your game to the next level. If you are searching for box cricket near me miyapur, Zenithh offers quality facilities and easy booking. Book your box cricket near me miyapur experience at Zenithh Sports Arena today.",
@@ -146,7 +146,7 @@ const SPORT_DETAILS: Record<string, any> = {
 
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "BCCI Certified Level 2 Coaches",
-    gallery: ["/images/cricket.webp"],
+    gallery: ["/images/cricket-card.webp"],
   },
 
   pickleball: {
@@ -216,7 +216,7 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "Zumba",
     seoKeyword: "Zumba Studio Near Me",
     subtitle: "Zumba & Fitness Studio",
-    heroImage: "/images/zumba.webp",
+    heroImage: "/images/zumba-card.webp",
 
     description:
       "Dance your way to fitness in our high-energy Zumba studio. Our certified instructors combine Latin and international music with dance moves for an exhilarating, effective workout. If you are searching for Zumba Studio Near Me, Zenithh offers quality facilities and easy booking. Book your Zumba Studio Near Me experience at Zenithh Sports Arena today.",
@@ -230,7 +230,7 @@ const SPORT_DETAILS: Record<string, any> = {
 
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Zumba Instructors",
-    gallery: ["/images/zumba.webp"],
+    gallery: ["/images/zumba-card.webp"],
   },
 
   "table-tennis": {
@@ -321,7 +321,7 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "VR Cricket",
     seoKeyword: "VR Cricket Game Near Me Miyapur",
     subtitle: "Immersive Virtual Reality Cricket",
-    heroImage: "/images/vr-cricket.webp",
+    heroImage: "/images/vr-cricket-card.webp",
 
     description:
       "Step into the ultimate virtual reality cricket experience at Zenithh Sports Arena. Face international-level pacers and spinners in hyper-realistic stadiums using state-of-the-art VR technology. Perfect for honing your reflexes, shot selection, and match awareness in a fully controlled digital environment. If you are searching for VR Cricket Game Near Me Miyapur, Zenithh offers quality facilities and easy booking. Book your VR Cricket Game Near Me Miyapur experience at Zenithh Sports Arena today.",
@@ -337,14 +337,14 @@ const SPORT_DETAILS: Record<string, any> = {
 
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "VR Training Specialists",
-    gallery: ["/images/vr-cricket.webp"],
+    gallery: ["/images/vr-cricket-card.webp"],
   },
 
   "badminton-outdoor": {
     title: "Badminton Outdoor",
     seoKeyword: "Badminton Court Near Me Miyapur",
     subtitle: "High-Energy Outdoor Badminton",
-    heroImage: "/images/badminton.webp",
+    heroImage: "/images/badminton-card.webp",
 
     description:
       "Experience the thrill of outdoor badminton at Zenithh Sports Arena. Specifically designed for all-weather recreational and competitive play, our outdoor badminton courts offer an exhilarating environment to improve fitness, agility, and racquet skills under the open sky. If you are searching for Badminton Court Near Me Miyapur, Zenithh offers quality facilities and easy booking. Book your Badminton Court Near Me Miyapur experience at Zenithh Sports Arena today.",
@@ -360,7 +360,7 @@ const SPORT_DETAILS: Record<string, any> = {
 
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Badminton Coaches",
-    gallery: ["/images/badminton.webp"],
+    gallery: ["/images/badminton-card.webp"],
   },
 };
 

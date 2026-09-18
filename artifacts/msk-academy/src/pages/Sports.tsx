@@ -137,7 +137,7 @@ const SPORTS = [
     id: "cricket",
     title: "Cricket",
     seoKeyword: "box cricket near me miyapur",
-    img: "/images/cricket.webp",
+    img: "/images/cricket-card.webp",
     tagline: "The Home of Elite Cricket Coaching in Hyderabad",
     description:
       "Cricket is more than just a sport in India - it is a passion and a life-defining dream. At Zenithh Sports Arena, we channel that passion into precision performance. Our professional net facilities and structured performance pathways transform every aspiring cricketer into a confident, competition-ready athlete. Players searching for box cricket near me miyapur can enjoy quality turf practice, training, and competitive sessions at Zenithh. Our box cricket near me miyapur experience is designed for friends, teams, and aspiring players.",
@@ -269,7 +269,7 @@ const SPORTS = [
     id: "zumba",
     title: "Zumba",
     seoKeyword: "Zumba Studio Near Me",
-    img: "/images/zumba.webp",
+    img: "/images/zumba-card.webp",
     tagline: "Dance, Fitness & Energy - All in One",
     description:
       "Zumba at Zenithh Sports Arena is where fitness meets dance in the most energizing way possible. Our certified Zumba instructors combine Latin-inspired dance rhythms with aerobic exercise principles to deliver high-energy sessions that improve fitness, coordination, and mental well-being. If you are searching for a Zumba Studio Near Me, Zenithh offers energetic sessions in an engaging environment. Our Zumba Studio Near Me classes are designed for different fitness levels.",
@@ -430,7 +430,7 @@ const SPORTS = [
     id: "vr-cricket",
     title: "VR Cricket",
     seoKeyword: "VR Cricket Game Near Me Miyapur",
-    img: "/images/vr-cricket.webp",
+    img: "/images/vr-cricket-card.webp",
     tagline: "Immersive Virtual Reality Cricket Experience",
     description:
       "Step into the ultimate virtual reality cricket experience at Zenithh Sports Arena. Face international-level pacers and spinners in hyper-realistic stadiums using state-of-the-art VR technology. Perfect for honing your reflexes, shot selection, and match awareness in a fully controlled digital environment. Players searching for VR Cricket Game Near Me Miyapur can experience immersive cricket at Zenithh. Our VR Cricket Game Near Me Miyapur experience is ideal for friends and family looking for interactive entertainment.",
@@ -459,7 +459,7 @@ const SPORTS = [
     id: "badminton-outdoor",
     title: "Badminton Outdoor",
     seoKeyword: "Badminton Court Near Me Miyapur",
-    img: "/images/badminton.webp",
+    img: "/images/badminton-card.webp",
     tagline: "High-Energy Outdoor Badminton Action",
     description:
       "Experience the thrill of outdoor badminton at Zenithh Sports Arena. Specifically designed for all-weather recreational and competitive play, our outdoor badminton courts offer an exhilarating environment to improve fitness, agility, and racquet skills under the open sky. Players searching for Badminton Court Near Me Miyapur can book quality badminton sessions at Zenithh. Our Badminton Court Near Me Miyapur facility is suitable for friends, teams, and players.",
@@ -557,7 +557,7 @@ export default function SportsPage() {
           title={currentSEO.title}
           description={currentSEO.description}
           keywords={currentSEO.keywords}
-          canonical={`https://www.zenithh.com/sports/${canonicalSlug || sportSlug}`}
+          canonical={`https://www.zenithh.com/sports/${canonicalSlug}`}
         />
       )}
       {!currentSEO && (

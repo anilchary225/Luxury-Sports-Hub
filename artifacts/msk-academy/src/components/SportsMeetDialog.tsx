@@ -72,7 +72,7 @@ export default function SportsMeetDialog() {
           {/* LEFT */}
           <div className="relative flex w-[55%] items-center justify-center bg-black">
             <img
-              src="/images/sports-meet-poster.webp"
+              src="/images/sports-meet-poster-optimized.webp"
               alt="Inter-School Sports Meet Poster"
               className="h-full w-full object-contain"
             />
@@ -157,7 +157,7 @@ export default function SportsMeetDialog() {
         {/* ===================== MOBILE ===================== */}
         <div className="flex flex-col lg:hidden">
           <img
-            src="/images/sports-meet-poster.webp"
+            src="/images/sports-meet-poster-optimized.webp"
             alt="Sports Meet"
             className="h-84 w-full bg-black object-contain sm:h-72 md:h-80 lg:h-auto"
           />
