@@ -578,26 +578,26 @@ export default function Home() {
 
         <section className="stats-bar relative z-10 border-y border-[var(--border-medium)] bg-[var(--bg-secondary)] py-12 md:py-16">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap md:justify-center items-center gap-y-10 gap-x-6 md:gap-16 lg:gap-20 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap md:justify-center lg:flex-nowrap items-center gap-y-10 gap-x-6 md:gap-10 lg:gap-8 xl:gap-12 max-w-4xl lg:max-w-6xl mx-auto">
 
               {/* Disciplines */}
 
-              <div className="stat-item text-center">
+              <div className="stat-item text-center shrink-0">
                 <AnimatedCounter
                   target={11}
                   className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
                 />
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block whitespace-nowrap">
                   Sports Disciplines
                 </span>
               </div>
 
-              <div className="hidden md:block w-[1px] h-16 bg-[var(--bg-inverse)]/10" />
+              <div className="hidden md:block w-[1px] h-16 bg-[var(--bg-inverse)]/10 shrink-0" />
 
               {/* Athletes */}
 
-              <div className="stat-item text-center">
+              <div className="stat-item text-center shrink-0">
                 <div className="flex items-end justify-center mb-2">
                   <AnimatedCounter
                     target={500}
@@ -609,37 +609,37 @@ export default function Home() {
                   </span>
                 </div>
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block whitespace-nowrap">
                   Active Athletes
                 </span>
               </div>
 
-              <div className="hidden md:block w-[1px] h-16 bg-[var(--bg-inverse)]/10" />
+              <div className="hidden md:block w-[1px] h-16 bg-[var(--bg-inverse)]/10 shrink-0" />
 
               {/* Coaches */}
 
-              <div className="stat-item text-center">
+              <div className="stat-item text-center shrink-0">
                 <AnimatedCounter
                   target={15}
                   className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
                 />
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block whitespace-nowrap">
                   Expert Coaches
                 </span>
               </div>
 
-              <div className="hidden md:block w-[1px] h-16 bg-[var(--bg-inverse)]/10" />
+              <div className="hidden md:block w-[1px] h-16 bg-[var(--bg-inverse)]/10 shrink-0" />
 
               {/* Facilities */}
 
-              <div className="stat-item text-center">
+              <div className="stat-item text-center shrink-0">
                 <AnimatedCounter
                   target={1}
                   className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
                 />
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block whitespace-nowrap">
                   World-Class Facility
                 </span>
               </div>

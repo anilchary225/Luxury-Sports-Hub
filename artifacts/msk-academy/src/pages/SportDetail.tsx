@@ -488,7 +488,6 @@ const SPORT_DETAILS: Record<string, any> = {
     coaches: "FIDE Rated Masters",
     gallery: [
       "/images/gallery-chess-1.webp",
-      "/images/about-interior.webp",
     ],
   },
 
@@ -565,8 +564,7 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Zumba Instructors",
     gallery: [
-      "/images/about-interior.webp",
-      "/images/facility-indoor.webp",
+      
     ],
   },
 
@@ -724,7 +722,6 @@ const SPORT_DETAILS: Record<string, any> = {
     gallery: [
       "/images/gallery-foosball-1.webp",
       "/images/gallery-foosball-2.webp",
-      "/images/gallery-foosball-3.webp",
       "/images/gallery-foosball-4.webp",
       "/images/gallery-foosball-5.webp",
     ],
@@ -882,7 +879,6 @@ const SPORT_DETAILS: Record<string, any> = {
     coaches: "Recreational Supervisors",
     gallery: [
       "/images/gallery-airhockey-1.webp",
-      "/images/gallery-foosball-3.webp",
     ],
   },
 
@@ -961,8 +957,7 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "VR Training Specialists",
     gallery: [
-      "/images/facility-indoor.webp",
-      "/images/msk_facility.webp",
+      
     ],
   },
 
@@ -1041,8 +1036,7 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Badminton Coaches",
     gallery: [
-      "/images/facility-indoor.webp",
-      "/images/about-arena.webp",
+   
     ],
   },
 };
