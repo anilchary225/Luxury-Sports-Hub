@@ -431,7 +431,7 @@ useEffect(() => {
             viewport={{ once: true }}
           >
             <Star className="w-12 h-12 text-[var(--bg-primary)] mx-auto mb-6 animate-pulse" fill="var(--bg-primary)" />
-            <h2 className="text-3xl md:text-7xl font-black uppercase text-[var(--bg-primary)] mb-6 tracking-[0.04em] leading-[1.1]">
+            <h2 className="text-3xl md:text-7xl font-black uppercase text-[var(--bg-primary)] mb-6 tracking-[0.04em] leading-[1.3]">
               Registrations Open
             </h2>
             <p className="text-[var(--bg-primary)]/80 text-xl md:text-2xl font-bold max-w-2xl mx-auto mb-10 leading-tight">

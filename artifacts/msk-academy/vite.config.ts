@@ -2,8 +2,6 @@ import path from 'path';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
-import { visualizer } from "rollup-plugin-visualizer";
-import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
 const rawPort = process.env.PORT ?? '3000';
 
@@ -20,13 +18,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    runtimeErrorOverlay(),
-    visualizer({
-      filename: "./dist/stats.html",
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
     ...(process.env.NODE_ENV !== 'production' &&
     process.env.REPL_ID !== undefined
       ? [
@@ -63,6 +54,9 @@ export default defineConfig({
     strictPort: true,
     host: '0.0.0.0',
     allowedHosts: true,
+    hmr: {
+      overlay: false,
+    },
     fs: {
       strict: false,
     },

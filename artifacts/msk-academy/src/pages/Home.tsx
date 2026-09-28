@@ -421,31 +421,7 @@ export default function Home() {
 
               {/* Sport Tags */}
 
-              <div className="sports-tags flex flex-wrap justify-start gap-x-3 sm:gap-x-6 gap-y-2 sm:gap-y-3 mb-6 sm:mb-8 text-[10px] sm:text-[13px]">
-                {[
-                  "Cricket",
-                  "Pickleball",
-                  "Volleyball",
-                  "Chess",
-                  "Zumba",
-                  "Table Tennis",
-                  "Foosball",
-                  "Carrom",
-                  "Air Hockey",
-                  "VR Cricket",
-                  "Badminton",
-                ].map((sport, index) => (
-                  <span
-                    key={sport}
-                    style={{
-                      animationDelay: `${1.2 + index * 0.05}s`,
-                    }}
-                    className="sport-tag sport-tag-animate text-white/50 font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] hover:text-[var(--color-gold-bright)] hover:translate-y-[-2px] transition-all cursor-pointer"
-                  >
-                    {sport}
-                  </span>
-                ))}
-              </div>
+              
 
               {/* Hero Buttons */}
 
@@ -559,74 +535,35 @@ export default function Home() {
             </div>
 
             <div className="sports-grid-wrapper">
+              {SPORTS_OVERVIEW.map((sport, i) => (
+                <Link
+                  to={`/sports/${SPORT_SLUGS[sport.id]}`}
+                  key={i}
+                  className="sport-card premium-image-hover group"
+                >
+                  <img
+                    src={sport.img}
+                    alt={`${sport.title} at Zenithh Sports Arena`}
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="480"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src =
+                        "/images/gallery-hero.webp";
+                    }}
+                  />
 
-              {/* Row 1: 6 cards */}
+                  <div className="sport-card-overlay">
+                    <span className="sport-card-name">
+                      {sport.title}
+                    </span>
 
-              <div className="sports-row-1">
-                {SPORTS_OVERVIEW.slice(0, 6).map((sport, i) => (
-                  <Link
-                    to={`/sports/${SPORT_SLUGS[sport.id]}`}
-                    key={i}
-                    className="sport-card premium-image-hover group"
-                  >
-                    <img
-                      src={sport.img}
-                      alt={`${sport.title} at Zenithh Sports Arena`}
-                      loading="lazy"
-                      decoding="async"
-                      width="640"
-                      height="480"
-                      onError={(e) => {
-                        e.currentTarget.onerror = null;
-                        e.currentTarget.src =
-                          "/images/gallery-hero.webp";
-                      }}
-                    />
-
-                    <div className="sport-card-overlay">
-                      <span className="sport-card-name">
-                        {sport.title}
-                      </span>
-
-                      <span className="sport-card-line" />
-                    </div>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Row 2: 5 cards */}
-
-              <div className="sports-row-2">
-                {SPORTS_OVERVIEW.slice(6, 11).map((sport, i) => (
-                  <Link
-                    to={`/sports/${SPORT_SLUGS[sport.id]}`}
-                    key={i}
-                    className="sport-card premium-image-hover group"
-                  >
-                    <img
-                      src={sport.img}
-                      alt={`${sport.title} at Zenithh Sports Arena`}
-                      loading="lazy"
-                      decoding="async"
-                      width="640"
-                      height="480"
-                      onError={(e) => {
-                        e.currentTarget.onerror = null;
-                        e.currentTarget.src =
-                          "/images/gallery-hero.webp";
-                      }}
-                    />
-
-                    <div className="sport-card-overlay">
-                      <span className="sport-card-name">
-                        {sport.title}
-                      </span>
-
-                      <span className="sport-card-line" />
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                    <span className="sport-card-line" />
+                  </div>
+                </Link>
+              ))}
             </div>
 
             <div className="text-center mt-20">
@@ -639,19 +576,19 @@ export default function Home() {
 
         {/* ═══ STATS BAR ═══ */}
 
-        <section className="stats-bar relative z-10 border-y border-[var(--border-medium)] bg-[var(--bg-secondary)] py-16">
+        <section className="stats-bar relative z-10 border-y border-[var(--border-medium)] bg-[var(--bg-secondary)] py-12 md:py-16">
           <div className="container mx-auto px-6">
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+            <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap md:justify-center items-center gap-y-10 gap-x-6 md:gap-16 lg:gap-20 max-w-4xl mx-auto">
 
               {/* Disciplines */}
 
               <div className="stat-item text-center">
                 <AnimatedCounter
                   target={11}
-                  className="stat-number text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
+                  className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
                 />
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.3em]">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
                   Sports Disciplines
                 </span>
               </div>
@@ -664,15 +601,15 @@ export default function Home() {
                 <div className="flex items-end justify-center mb-2">
                   <AnimatedCounter
                     target={500}
-                    className="stat-number text-5xl md:text-7xl font-black text-[var(--color-gold-primary)]"
+                    className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)]"
                   />
 
-                  <span className="text-3xl md:text-4xl font-black text-[var(--color-gold-primary)] mb-1 ml-1">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-black text-[var(--color-gold-primary)] mb-1 ml-1">
                     +
                   </span>
                 </div>
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.3em]">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
                   Active Athletes
                 </span>
               </div>
@@ -684,10 +621,10 @@ export default function Home() {
               <div className="stat-item text-center">
                 <AnimatedCounter
                   target={15}
-                  className="stat-number text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
+                  className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
                 />
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.3em]">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
                   Expert Coaches
                 </span>
               </div>
@@ -699,10 +636,10 @@ export default function Home() {
               <div className="stat-item text-center">
                 <AnimatedCounter
                   target={1}
-                  className="stat-number text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
+                  className="stat-number text-4xl sm:text-5xl md:text-7xl font-black text-[var(--color-gold-primary)] mb-2 block"
                 />
 
-                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.3em]">
+                <span className="stat-label text-[10px] md:text-xs text-[var(--text-muted)] font-bold uppercase tracking-[0.25em] block">
                   World-Class Facility
                 </span>
               </div>
@@ -1015,7 +952,7 @@ export default function Home() {
 
         {/* ═══ CTA ═══ */}
 
-        <section className="cta-section py-40 relative overflow-hidden bg-[var(--bg-secondary)] !bg-none">
+        <section className="cta-section py-20 md:py-28 relative overflow-hidden bg-[var(--bg-secondary)] !bg-none">
 
           {/* Animated noise pattern */}
 
@@ -1023,7 +960,7 @@ export default function Home() {
 
           <div className="container mx-auto px-6 relative z-20 text-center">
 
-            <h2 className="text-3xl md:text-7xl font-black uppercase tracking-widest mb-8 text-[var(--text-primary)] leading-[1.3] max-w-5xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-wider mb-6 text-[var(--text-primary)] leading-[1.25] max-w-4xl mx-auto">
               <span className="block">
                 TRANSFORM YOUR CAMPUS
               </span>
@@ -1037,25 +974,25 @@ export default function Home() {
               </span>
             </h2>
 
-            <p className="text-[var(--text-muted)] text-lg md:text-xl mb-16 max-w-2xl mx-auto font-medium">
+            <p className="text-[var(--text-muted)] text-base md:text-lg mb-10 max-w-2xl mx-auto font-medium">
               Partner with Zenithh Sports Arena - Hyderabad's most
               comprehensive multi-sport facility.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center max-w-sm mx-auto sm:max-w-none">
 
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLScxSW3CxICNVxvRtKCAJnJFk1FDjap4rkQ9vcBOS_fo0JJ9Gg/viewform?usp=header"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-highlight"
+                className="btn-highlight w-full sm:w-auto text-center justify-center"
               >
                 REGISTER NOW
               </a>
 
               <Link
                 to="/sports"
-                className="btn-secondary"
+                className="btn-secondary w-full sm:w-auto text-center justify-center"
               >
                 EXPLORE SPORTS
               </Link>

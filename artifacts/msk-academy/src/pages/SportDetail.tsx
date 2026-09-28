@@ -6,6 +6,18 @@ import {
   CheckCircle,
   Clock,
   Users,
+  Layers,
+  Cpu,
+  Zap,
+  Award,
+  Trophy,
+  Target,
+  Shield,
+  Activity,
+  Sparkles,
+  Eye,
+  Flame,
+  Timer,
 } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
 import { SPORTS_FAQS } from "@/constants/faqs";
@@ -124,6 +136,42 @@ const SEO_METADATA: Record<
 };
 
 /* =========================================================
+   SPEC ICON HELPER
+   ========================================================= */
+
+const renderSpecIcon = (iconName: string) => {
+  const iconProps = { className: "w-6 h-6 text-primary" };
+  switch (iconName) {
+    case "layers":
+      return <Layers {...iconProps} />;
+    case "cpu":
+      return <Cpu {...iconProps} />;
+    case "eye":
+      return <Eye {...iconProps} />;
+    case "sparkles":
+      return <Sparkles {...iconProps} />;
+    case "target":
+      return <Target {...iconProps} />;
+    case "shield":
+      return <Shield {...iconProps} />;
+    case "zap":
+      return <Zap {...iconProps} />;
+    case "timer":
+      return <Timer {...iconProps} />;
+    case "award":
+      return <Award {...iconProps} />;
+    case "flame":
+      return <Flame {...iconProps} />;
+    case "trophy":
+      return <Trophy {...iconProps} />;
+    case "activity":
+      return <Activity {...iconProps} />;
+    default:
+      return <Target {...iconProps} />;
+  }
+};
+
+/* =========================================================
    SPORT DETAILS
    ========================================================= */
 
@@ -144,9 +192,67 @@ const SPORT_DETAILS: Record<string, any> = {
       "Dedicated strength and conditioning for cricketers",
     ],
 
+    specs: [
+      {
+        title: "All-Weather Turf Nets",
+        icon: "layers",
+        description:
+          "Multi-lane synthetic turf wickets calibrated for authentic bounce, true pace, and natural seam movement.",
+      },
+      {
+        title: "RoboArm & Bowling Machines",
+        icon: "cpu",
+        description:
+          "High-velocity automated bowling units delivering programmable speeds from 60 km/h to 145 km/h+ with swing and spin.",
+      },
+      {
+        title: "Biomechanical Video Bay",
+        icon: "eye",
+        description:
+          "High-frame-rate video capture and slow-motion breakdown for batting backlift, stance balance, and release point.",
+      },
+      {
+        title: "Shadowless Floodlights",
+        icon: "sparkles",
+        description:
+          "Day-night LED sports lighting calibrated to eliminate glare and blind spots during high-speed evening sessions.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "BATTING",
+        title: "Technical Stance & Power Hitting",
+        description:
+          "Mastering balance, weight transfer, defensive solidity against express pace, and modern 360-degree boundary striking.",
+      },
+      {
+        tag: "BOWLING",
+        title: "Pace & Spin Artistry",
+        description:
+          "Seam presentation, wrist control, off-cutter and googly variations, and pinpoint yorker accuracy in death overs.",
+      },
+      {
+        tag: "MATCH PLAY",
+        title: "Pressure & Chase Simulation",
+        description:
+          "Simulated match overs, death-over run-rate targets, tactical box cricket situational awareness, and game management.",
+      },
+      {
+        tag: "FITNESS",
+        title: "Cricket-Specific Conditioning",
+        description:
+          "Rotational core strength, explosive running between wickets, reflex catching drills, and shoulder injury prevention.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "BCCI Certified Level 2 Coaches",
-    gallery: ["/images/cricket-card.webp"],
+    gallery: [
+      "/images/cricket-1.webp",
+      "/images/cricket-2.webp",
+      "/images/cricket-3.webp",
+    ],
   },
 
   pickleball: {
@@ -165,9 +271,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "Regular weekend tournaments and leagues",
     ],
 
+    specs: [
+      {
+        title: "USAPA Official Sizing",
+        icon: "target",
+        description:
+          "Dedicated 20x44 ft tournament courts with precision non-volley kitchen boundaries and regulation sideline margins.",
+      },
+      {
+        title: "Cushioned Acrylic Surface",
+        icon: "layers",
+        description:
+          "Shock-absorbing multi-layer acrylic sports coating engineered to minimize joint impact and ensure consistent ball bounce.",
+      },
+      {
+        title: "Tournament Tension Nets",
+        icon: "shield",
+        description:
+          "Heavy-duty anchored center posts with anti-sag cable tension set to strict 34-inch center regulation height.",
+      },
+      {
+        title: "Anti-Glare Court Illumination",
+        icon: "sparkles",
+        description:
+          "Uniform overhead LED lighting ensuring crisp, clear tracking of neon pickleballs throughout evening play.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "KITCHEN PLAY",
+        title: "Dink Control & Soft Game",
+        description:
+          "Patience at the non-volley zone, soft-touch resets, angle dinking, and unforced error minimization.",
+      },
+      {
+        tag: "TRANSITION",
+        title: "Third-Shot Drop Mastery",
+        description:
+          "Calibrating baseline drop arcs and driving shots to advance safely to the offensive kitchen line.",
+      },
+      {
+        tag: "DOUBLES STRATEGY",
+        title: "Stacking & Court Coverage",
+        description:
+          "Partner rotation communication, tactical stacking, court positioning, and aggressive middle-poach attacks.",
+      },
+      {
+        tag: "REFLEXES",
+        title: "Hand Speed & Fast Volleys",
+        description:
+          "Defending rapid-fire hand battles at the net, punch volleys, roll volleys, and decisive overhead put-aways.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Professional Pickleball Instructors",
-    gallery: ["/images/pickleball.webp"],
+    gallery: [
+      "/images/gallery-pickle-1.webp",
+      "/images/pickle-ball.webp",
+    ],
   },
 
   volleyball: {
@@ -186,9 +349,69 @@ const SPORT_DETAILS: Record<string, any> = {
       "Specialized jump training equipment",
     ],
 
+    specs: [
+      {
+        title: "FIVB Standard Arena",
+        icon: "target",
+        description:
+          "Full 18m x 9m regulation dimensions with official antenna posts and adjustable net heights for men, women, and juniors.",
+      },
+      {
+        title: "Impact-Absorbing Flooring",
+        icon: "layers",
+        description:
+          "High-grip synthetic sports floor formulated for safe diving, rapid direction changes, and landing impact absorption.",
+      },
+      {
+        title: "Spacious Safety Perimeter",
+        icon: "shield",
+        description:
+          "Generous runoff buffer zones and high-clearance overhead space for deep digs and unobstructed high-arc sets.",
+      },
+      {
+        title: "Pro Ball Systems & Aids",
+        icon: "zap",
+        description:
+          "Official tournament match balls, setter training rings, spike approach boards, and vertical jump measurement stations.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "ATTACK",
+        title: "Spike Explosion & Approach Footwork",
+        description:
+          "Refining 4-step approach mechanics, vertical jump height, explosive arm swing, and hitting around double blocks.",
+      },
+      {
+        tag: "SETTING",
+        title: "Tempo & Distribution Strategy",
+        description:
+          "Soft fingertip control, quick tempo sets to middle blockers, back-sets, and deceptive setter dumps under pressure.",
+      },
+      {
+        tag: "DEFENSE",
+        title: "Platform Passing & Floor Defense",
+        description:
+          "Forearm platform consistency, reading attacker shoulder angles, diving pancakes, and emergency roll recoveries.",
+      },
+      {
+        tag: "SERVE & TACTICS",
+        title: "Jump Serves & System Rotations",
+        description:
+          "Developing floating dip serves, power topspin jump serves, rotational coverage, and transitional counter-attacks.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "National Level Volleyball Coaches",
-    gallery: ["/images/volleyball.webp"],
+    gallery: [
+      "/images/gallery-volley-1.webp",
+      "/images/gallery-volley-2.webp",
+      "/images/gallery-volley-3.webp",
+      "/images/volleyball-action-1.webp",
+      "/images/volleyball-action-2.webp",
+    ],
   },
 
   chess: {
@@ -207,9 +430,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "Regular internal rating tournaments",
     ],
 
+    specs: [
+      {
+        title: "FIDE Tournament Boards & Clocks",
+        icon: "timer",
+        description:
+          "Weighted Staunton pieces, non-glare tournament boards, and precision digital DGT chess clocks for official time controls.",
+      },
+      {
+        title: "Acoustically Treated Zone",
+        icon: "shield",
+        description:
+          "Sound-insulated, quiet environment crafted for deep calculation, tactical vision, and distraction-free concentration.",
+      },
+      {
+        title: "Master Demonstration Boards",
+        icon: "layers",
+        description:
+          "Large magnetic wall boards for coaches to deconstruct grandmaster games, thematic openings, and puzzle patterns.",
+      },
+      {
+        title: "Digital Database & Game Library",
+        icon: "award",
+        description:
+          "Access to thousands of annotated classical master games, thematic opening repertoires, and tactical drill sheets.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "OPENINGS",
+        title: "Principles & Repertoire Building",
+        description:
+          "Understanding classical opening principles (1.e4, 1.d4, Sicilian, Indian defenses) through ideas rather than rote memory.",
+      },
+      {
+        tag: "TACTICS",
+        title: "Calculation & Combinational Vision",
+        description:
+          "Spotting pins, skewers, double attacks, deflections, and tactical sacrifices to seize decisive material advantage.",
+      },
+      {
+        tag: "ENDGAME",
+        title: "Pawn Structures & King Activity",
+        description:
+          "Mastering critical endgame techniques: opposition, Lucena & Philidor positions, minor piece endgames, and promotion races.",
+      },
+      {
+        tag: "PSYCHOLOGY",
+        title: "Time Management & Tournament Resilience",
+        description:
+          "Managing clock pressure, avoiding blunder traps, maintaining emotional composure, and fighting back from difficult positions.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "FIDE Rated Masters",
-    gallery: ["/images/chess.webp"],
+    gallery: [
+      "/images/gallery-chess-1.webp",
+      "/images/about-interior.webp",
+    ],
   },
 
   zumba: {
@@ -228,9 +508,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "High-energy, certified instructors",
     ],
 
+    specs: [
+      {
+        title: "Sprung Wooden Dance Floor",
+        icon: "layers",
+        description:
+          "Shock-absorbing floating timber flooring engineered to cushion joints and protect knees during high-energy dance routines.",
+      },
+      {
+        title: "Panoramic Wall Mirrors",
+        icon: "eye",
+        description:
+          "Full-length studio mirrors providing clear visibility for participants to check posture, rhythm, and body alignment.",
+      },
+      {
+        title: "Concert Acoustic Soundstage",
+        icon: "zap",
+        description:
+          "High-definition surround sound system delivering deep bass and energetic Latin, Afrobeat, and global workout tracks.",
+      },
+      {
+        title: "Climate-Controlled Airflow",
+        icon: "flame",
+        description:
+          "High-volume air filtration and cooling that keeps participants refreshed throughout intense 60-minute sweat sessions.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "CARDIO",
+        title: "High-Calorie Interval Burn",
+        description:
+          "Alternating fast and slow rhythms to maximize calorie expenditure (up to 700 kcal/hr) and boost cardiovascular capacity.",
+      },
+      {
+        tag: "TONING",
+        title: "Core & Full-Body Sculpting",
+        description:
+          "Rhythmic choreography integrating squats, lunges, hip rotations, and arm extensions to build lean muscle definition.",
+      },
+      {
+        tag: "COORDINATION",
+        title: "Rhythm & Motor Agility",
+        description:
+          "Learning international dance styles including Salsa, Merengue, Cumbia, Reggaeton, and high-tempo Bollywood fusion.",
+      },
+      {
+        tag: "WELLNESS",
+        title: "Endorphin Elevation & Stress Relief",
+        description:
+          "A joyful, inclusive, community-driven workout experience that melts mental stress and elevates daily energy.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Zumba Instructors",
-    gallery: ["/images/zumba-card.webp"],
+    gallery: [
+      "/images/about-interior.webp",
+      "/images/facility-indoor.webp",
+    ],
   },
 
   "table-tennis": {
@@ -249,9 +586,67 @@ const SPORT_DETAILS: Record<string, any> = {
       "Advanced multi-ball training sessions",
     ],
 
+    specs: [
+      {
+        title: "ITTF Approved 25mm Tables",
+        icon: "layers",
+        description:
+          "Championship-level table surfaces providing uniform ball bounce, true spin response, and anti-glare finish.",
+      },
+      {
+        title: "Robotic Multi-Spin Feeders",
+        icon: "cpu",
+        description:
+          "Programmable robotic launchers capable of variable speed, oscillation, topspin, backspin, and side-spin combinations.",
+      },
+      {
+        title: "Anti-Glare Shadowless Lighting",
+        icon: "sparkles",
+        description:
+          "Professional overhead sports illumination delivering optimal ball contrast at speeds exceeding 100 km/h.",
+      },
+      {
+        title: "High-Traction Court Matting",
+        icon: "shield",
+        description:
+          "Dedicated non-slip tournament court matting ensuring stability during aggressive lateral lunges and recovery steps.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "SPIN & DRIVE",
+        title: "Loop & Counter-Attack Mastery",
+        description:
+          "Generating explosive topspin with brush contact, waist torque, forehand kill loops, and backhand banana flicks.",
+      },
+      {
+        tag: "SERVICE",
+        title: "Serve Deception & Spin Control",
+        description:
+          "Developing ghost underspin serves, heavy side-spin pendulum serves, and disguised no-spin fast deliveries.",
+      },
+      {
+        tag: "FOOTWORK",
+        title: "Lateral Agility & Recovery Speed",
+        description:
+          "Executing rapid side-to-side shuffle steps, in-and-out table transitions, and maintaining balance during extended rallies.",
+      },
+      {
+        tag: "REFLEXES",
+        title: "Close-Table Block & Multi-Ball Drills",
+        description:
+          "High-speed multi-ball repetition training that builds lightning reflexes and subconscious shot placement.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "State Level Table Tennis Champions",
-    gallery: ["/images/table-tennis.webp"],
+    gallery: [
+      "/images/gallery-tabletennis-1.webp",
+      "/images/gallery-tabletennis-2.webp",
+      "/images/gallery-tabletennis-3.webp",
+    ],
   },
 
   foosball: {
@@ -270,9 +665,69 @@ const SPORT_DETAILS: Record<string, any> = {
       "Perfect for corporate events and team building",
     ],
 
+    specs: [
+      {
+        title: "ITSF Tournament-Grade Tables",
+        icon: "trophy",
+        description:
+          "Professional competition tables with solid stainless-steel through-rods, balanced players, and precision foot profiles.",
+      },
+      {
+        title: "Zero-Friction Glass Playfield",
+        icon: "layers",
+        description:
+          "Sandblasted tempered glass bed ensuring perfectly true ball rolling without dead zones or accidental roll drifts.",
+      },
+      {
+        title: "Octagonal Ergonomic Grips",
+        icon: "target",
+        description:
+          "High-torque textured handles engineered for finger-roll spin control, wrist snap power, and zero hand slippage.",
+      },
+      {
+        title: "Dedicated Recreation Lounge",
+        icon: "sparkles",
+        description:
+          "Comfortable spectator seating, warm ambient lighting, and bracket boards for casual friend games and tournaments.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "SHOT MASTERY",
+        title: "The Snake & Pull Shot",
+        description:
+          "Mastering tournament-standard rollover (snake) shots and explosive pull shots clocked at over 40 km/h.",
+      },
+      {
+        tag: "BALL CONTROL",
+        title: "5-Bar Passing & Lane Control",
+        description:
+          "Executing crisp wall passes, brush passes, and maintaining midfield offensive possession against defensive guards.",
+      },
+      {
+        tag: "GOALKEEPING",
+        title: "2-Man Rod Defense & Angle Cutting",
+        description:
+          "Synchronizing goalie and 2-bar defense to eliminate straight-lane and bank angles, clearing rebounds decisively.",
+      },
+      {
+        tag: "TEAM TACTICS",
+        title: "2v2 Coordination & Mental Speed",
+        description:
+          "Building unspoken chemistry between front and back players, baiting opponent defenders, and managing clutch match balls.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Recreational Supervisors",
-    gallery: ["/images/foosball.webp"],
+    gallery: [
+      "/images/gallery-foosball-1.webp",
+      "/images/gallery-foosball-2.webp",
+      "/images/gallery-foosball-3.webp",
+      "/images/gallery-foosball-4.webp",
+      "/images/gallery-foosball-5.webp",
+    ],
   },
 
   carrom: {
@@ -291,9 +746,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "Quiet zone for maximum concentration",
     ],
 
+    specs: [
+      {
+        title: "English Birch Champion Boards",
+        icon: "layers",
+        description:
+          "Handcrafted tournament playing surfaces with satin finish and high-rebound natural rubber borders for frictionless glide.",
+      },
+      {
+        title: "Circular Shadowless Lighting",
+        icon: "sparkles",
+        description:
+          "Overhead diffused ring illumination positioned directly above the board to eliminate coin and striker shadows.",
+      },
+      {
+        title: "Precision Weighted Strikers",
+        icon: "target",
+        description:
+          "Regulation weight-compliant 15g tournament strikers and authentic wooden carrom coin sets with champion finish.",
+      },
+      {
+        title: "Posture-Correct Seating",
+        icon: "shield",
+        description:
+          "Ergonomic seating matched to board table height to provide maximum shoulder stability and comfortable long-session play.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "FINGER TECHNIQUE",
+        title: "Thumb & Scissor Grip Accuracy",
+        description:
+          "Mastering the straight flick, middle finger flick, and thumb push to generate pinpoint directional control and power.",
+      },
+      {
+        tag: "GEOMETRY",
+        title: "Rebound Angles & Bank Shots",
+        description:
+          "Calculating mathematical rebound angles off borders to free trapped coins and convert difficult indirect pockets.",
+      },
+      {
+        tag: "BOARD STRATEGY",
+        title: "Queen Cover & Coin Management",
+        description:
+          "Strategic coin clustering, blocking opponent pockets, and timing the decisive queen pocketing and cover confirmation.",
+      },
+      {
+        tag: "FOCUS",
+        title: "Breath Control & Match Calmness",
+        description:
+          "Developing laser-sharp concentration, fine motor discipline, and composure when executing match-winning shots.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Experienced Carrom Professionals",
-    gallery: ["/images/carroms.webp"],
+    gallery: [
+      "/images/gallery-carroms-1.webp",
+      "/images/gallery-carroms-2.webp",
+    ],
   },
 
   "air-hockey": {
@@ -312,9 +824,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "High-energy arcade environment",
     ],
 
+    specs: [
+      {
+        title: "Industrial Air Cushion Bed",
+        icon: "flame",
+        description:
+          "Commercial blower motor pushing thousands of micro-air jets through precision perforations for effortless puck glide.",
+      },
+      {
+        title: "Hardened Aluminum Bank Rails",
+        icon: "shield",
+        description:
+          "Impact-grade tournament perimeter rails engineered for 100% true bounce deflection and high-speed rail shots.",
+      },
+      {
+        title: "Infrared Electronic Scoreboard",
+        icon: "cpu",
+        description:
+          "Overhead digital display with infrared goal detection sensors and immersive arcade arena sound effects.",
+      },
+      {
+        title: "Weighted Pro Mallets & Pucks",
+        icon: "target",
+        description:
+          "Ergonomic high-density mallets with felt-padded undersides and aerodynamic pucks designed for intense gameplay.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "REFLEXES",
+        title: "Reaction Speed & Visual Tracking",
+        description:
+          "Honing split-second twitch reflexes to track and intercept pucks rocketing at over 80 km/h across the table.",
+      },
+      {
+        tag: "ANGLES",
+        title: "Bank Cuts & Wall Trick Shots",
+        description:
+          "Utilizing acute rail angles to ricochet pucks around defender mallets into unattended goal corners.",
+      },
+      {
+        tag: "DEFENSE",
+        title: "Center-Line Mallet Shielding",
+        description:
+          "Centering the mallet, absorbing fast attacks, preventing self-goals, and converting blocks into instant counter-strikes.",
+      },
+      {
+        tag: "COMPETITION",
+        title: "Match Strategy & Tournament Play",
+        description:
+          "Managing match tempo, sudden-death overtime pressure, and winning best-of-7 series against top recreational rivals.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Recreational Supervisors",
-    gallery: ["/images/air-hockey.webp"],
+    gallery: [
+      "/images/gallery-airhockey-1.webp",
+      "/images/gallery-foosball-3.webp",
+    ],
   },
 
   "vr-cricket": {
@@ -335,9 +904,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "Safe, weather-proof, immersive training",
     ],
 
+    specs: [
+      {
+        title: "6-DOF Spatial Motion Sensors",
+        icon: "cpu",
+        description:
+          "Sub-millimeter tracking sensors capturing real bat angle, swing speed, backlift path, and point of ball impact.",
+      },
+      {
+        title: "Haptic Sensor-Equipped Bat",
+        icon: "zap",
+        description:
+          "Genuine willow cricket bat fitted with wireless kinetic sensors delivering authentic physical impact feedback.",
+      },
+      {
+        title: "360° Photorealistic Stadiums",
+        icon: "eye",
+        description:
+          "Hyper-immersive virtual international arenas complete with floodlights, dynamic crowds, and authentic field settings.",
+      },
+      {
+        title: "Adaptive Bowling Trajectory AI",
+        icon: "activity",
+        description:
+          "Proprietary physics engine simulating seam, swing, drift, and spin from 70 km/h leg-breaks to 150 km/h bouncers.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "TIMING",
+        title: "Early Ball Pick-up & Bat Speed",
+        description:
+          "Training eyes to read the bowler's hand release, picking up length instantaneously, and swinging through the line.",
+      },
+      {
+        tag: "SHOT ARSENAL",
+        title: "Front & Back Foot Strokeplay",
+        description:
+          "Honing cover drives, pull shots, late cuts, and ramp shots in a completely risk-free, weather-independent environment.",
+      },
+      {
+        tag: "ANALYTICS",
+        title: "Telemetry & Performance Metrics",
+        description:
+          "Reviewing instant post-shot telemetry: impact sweet-spot percentage, bat speed, launch angle, and ball exit velocity.",
+      },
+      {
+        tag: "PRESSURE",
+        title: "Super Over & Chase Scenarios",
+        description:
+          "Testing nerves in simulated stadium match crises: chasing 15 runs in the final over with 50,000 virtual fans watching.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "VR Training Specialists",
-    gallery: ["/images/vr-cricket-card.webp"],
+    gallery: [
+      "/images/facility-indoor.webp",
+      "/images/msk_facility.webp",
+    ],
   },
 
   "badminton-outdoor": {
@@ -358,9 +984,66 @@ const SPORT_DETAILS: Record<string, any> = {
       "Perfect for early morning and evening fitness routines",
     ],
 
+    specs: [
+      {
+        title: "All-Weather Synthetic Court",
+        icon: "layers",
+        description:
+          "Textured multi-layer outdoor sports coating offering dependable traction and drainage in varying weather conditions.",
+      },
+      {
+        title: "Wind-Resistant AirShuttle Compatibility",
+        icon: "target",
+        description:
+          "Engineered for both standard and aerodynamic AirShuttles to deliver stable flight arcs under open-air breezes.",
+      },
+      {
+        title: "High-Mast Perimeter Floodlights",
+        icon: "sparkles",
+        description:
+          "Evenly distributed floodlights allowing sharp visual contrast of white and neon shuttlecocks throughout the night.",
+      },
+      {
+        title: "Regulation Posts & Netting",
+        icon: "shield",
+        description:
+          "Rigid anchor posts with heavy-duty weather-treated netting tensioned to official 1.55m height specifications.",
+      },
+    ],
+
+    pathway: [
+      {
+        tag: "POWER",
+        title: "Smash Mechanics & Jump Smashes",
+        description:
+          "Full-body kinetic chain transfer, wrist pronation snap, and downward steep smash angles that pierce defenses.",
+      },
+      {
+        tag: "FINESSE",
+        title: "Drop Shots & Net Tumbling",
+        description:
+          "Deceptive wrist slices, cross-court drop shots, and delicate net spins that force opponents into defensive lifts.",
+      },
+      {
+        tag: "AGILITY",
+        title: "6-Corner Footwork & Recovery",
+        description:
+          "Split-step timing, chassé movements, lunging balance, and instant center-court recovery between rapid exchanges.",
+      },
+      {
+        tag: "ENDURANCE",
+        title: "Cardio Conditioning & Rally Stamina",
+        description:
+          "Aerobic and anaerobic fitness drills designed to maintain explosive speed and shot accuracy deep into the 3rd set.",
+      },
+    ],
+
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Badminton Coaches",
-    gallery: ["/images/badminton-card.webp"],
+    gallery: [
+      "/images/facility-indoor.webp",
+      "/images/about-arena.webp",
+    ],
   },
 };
 
@@ -592,7 +1275,7 @@ export default function SportDetail() {
 
               <motion.h1
                 variants={fadeIn}
-                className="text-5xl md:text-7xl font-black uppercase text-[var(--text-primary)] tracking-tight mb-6"
+                className="text-5xl md:text-7xl font-black uppercase text-[var(--text-primary)] tracking-tight mb-6 leading-[1.3]"
               >
                 {sport.title}
               </motion.h1>
@@ -625,7 +1308,7 @@ export default function SportDetail() {
 
                 <motion.h2
                   variants={fadeIn}
-                  className="text-3xl font-extrabold uppercase text-[var(--text-primary)] mb-6"
+                  className="text-3xl font-extrabold uppercase text-[var(--text-primary)] mb-6 leading-[1.3]"
                 >
                   About the Program
                 </motion.h2>
@@ -758,6 +1441,142 @@ export default function SportDetail() {
         </section>
 
         {/* =================================================
+            1. ARENA & EQUIPMENT SPECIFICATIONS
+            ================================================= */}
+
+        {sport.specs && sport.specs.length > 0 && (
+          <section className="py-20 md:py-24 bg-[var(--bg-secondary)] border-t border-[var(--border-light)]">
+            <div className="container mx-auto px-6">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="text-center mb-16"
+              >
+                <motion.span
+                  variants={fadeIn}
+                  className="text-primary font-bold tracking-[0.3em] uppercase text-xs block mb-3"
+                >
+                  World-Class Setup
+                </motion.span>
+
+                <motion.h2
+                  variants={fadeIn}
+                  className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] tracking-tight leading-[1.3]"
+                >
+                  Facility & Equipment Specifications
+                </motion.h2>
+
+                <motion.p
+                  variants={fadeIn}
+                  className="text-[var(--text-muted)] text-base md:text-lg max-w-2xl mx-auto mt-4 font-normal leading-relaxed"
+                >
+                  Engineered to tournament standards with professional infrastructure and high-performance equipment.
+                </motion.p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                {sport.specs.map((spec: any, idx: number) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="p-6 rounded-lg bg-[var(--bg-primary)] border border-[var(--border-light)] hover:border-primary/50 transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/10"
+                  >
+                    <div>
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-5 group-hover:scale-110 transition-transform">
+                        {renderSpecIcon(spec.icon)}
+                      </div>
+
+                      <h3 className="text-lg font-bold uppercase text-[var(--text-primary)] mb-2 tracking-wide">
+                        {spec.title}
+                      </h3>
+
+                      <p className="text-sm text-[var(--text-muted)] leading-relaxed font-normal">
+                        {spec.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* =================================================
+            2. TRAINING DYNAMICS & FOCUS AREAS
+            ================================================= */}
+
+        {sport.pathway && sport.pathway.length > 0 && (
+          <section className="py-20 md:py-24 bg-[var(--bg-primary)] border-t border-[var(--border-light)]">
+            <div className="container mx-auto px-6">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+                className="text-center mb-16"
+              >
+                <motion.span
+                  variants={fadeIn}
+                  className="text-primary font-bold tracking-[0.3em] uppercase text-xs block mb-3"
+                >
+                  Skill Progression
+                </motion.span>
+
+                <motion.h2
+                  variants={fadeIn}
+                  className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] tracking-tight leading-[1.3]"
+                >
+                  Training Dynamics & Core Focus
+                </motion.h2>
+
+                <motion.p
+                  variants={fadeIn}
+                  className="text-[var(--text-muted)] text-base md:text-lg max-w-2xl mx-auto mt-4 font-normal leading-relaxed"
+                >
+                  Structured skill development designed to take your {sport.title} technique from fundamentals to competitive mastery.
+                </motion.p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                {sport.pathway.map((item: any, idx: number) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="p-6 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-light)] hover:border-primary/50 transition-all duration-300 relative overflow-hidden group flex flex-col justify-between hover:-translate-y-1 shadow-lg shadow-black/10"
+                  >
+                    <div className="absolute top-0 right-0 w-14 h-14 bg-primary/5 rounded-bl-full flex items-start justify-end p-2.5 text-xs font-black text-primary/40 group-hover:text-primary transition-colors">
+                      0{idx + 1}
+                    </div>
+
+                    <div>
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary mb-2 block">
+                        {item.tag}
+                      </span>
+
+                      <h3 className="text-lg font-bold uppercase text-[var(--text-primary)] mb-3 tracking-wide">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-sm text-[var(--text-muted)] leading-relaxed font-normal">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* =================================================
             GALLERY
             ================================================= */}
 
@@ -784,7 +1603,7 @@ export default function SportDetail() {
 
                   <motion.h2
                     variants={fadeIn}
-                    className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)]"
+                    className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] leading-[1.3]"
                   >
                     {sport.title} Gallery
                   </motion.h2>
