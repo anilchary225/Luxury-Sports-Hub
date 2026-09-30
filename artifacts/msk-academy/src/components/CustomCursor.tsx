@@ -36,23 +36,25 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <div className="hidden lg:block">
+    <div className="hidden lg:block pointer-events-none">
       {/* Dot */}
       <div
         ref={dotRef}
-        className="cursor-dot"
+        className="cursor-dot pointer-events-none"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
+          zIndex: 9999999,
         }}
       />
       {/* Ring */}
       <div
         ref={ringRef}
-        className={`cursor-ring ${isHovered ? "hovered" : ""}`}
+        className={`cursor-ring pointer-events-none ${isHovered ? "hovered" : ""}`}
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
+          zIndex: 9999998,
         }}
       />
     </div>
