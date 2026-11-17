@@ -53,7 +53,7 @@ export const COACHES_DATA: Coach[] = [
   {
     id: "ch-vijayalakshmi",
     name: "Ch. Vijayalakshmi",
-    role: "Volleyball, Throwball & Multi-Sport Coach",
+    role: "Physical Director, Volleyball, Throwball & Multi-Sport Coach",
     shortSummary: "National volleyball and state-level throwball player, qualified in B.P.Ed. and M.P.Ed., with a South Zone multi-sport background.",
     image: "/images/coach-ch-vijayalakshmi-uniform.webp",
     imagePosition: "center top",
