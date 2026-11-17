@@ -19,10 +19,11 @@ const CoachCard: React.FC<CoachCardProps> = ({ coach }) => {
       {/* Gold Top Border reveal */}
       <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-gold-primary)] translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-500 z-20" />
       
-      <div className="premium-image-hover relative aspect-[3/4] overflow-hidden">
+      <div className="premium-image-hover relative aspect-[3/4] overflow-hidden bg-black">
         <img
           src={coach.image}
           alt={coach.name}
+          style={{ objectPosition: coach.imagePosition }}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />

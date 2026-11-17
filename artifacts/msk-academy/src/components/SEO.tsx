@@ -5,6 +5,8 @@ interface SEOProps {
   description: string;
   keywords?: string;
   canonical?: string;
+  image?: string;
+  type?: string;
 }
 
 const SEO = ({
@@ -12,6 +14,8 @@ const SEO = ({
   description,
   keywords,
   canonical,
+  image,
+  type = "website",
 }: SEOProps) => {
   useEffect(() => {
     // Page title
@@ -59,7 +63,41 @@ const SEO = ({
 
       canonicalTag.href = canonical;
     }
-  }, [title, description, keywords, canonical]);
+
+    const socialTags = {
+      "og:title": title,
+      "og:description": description,
+      "og:type": type,
+      "twitter:title": title,
+      "twitter:description": description,
+      ...(canonical ? { "og:url": canonical, "twitter:url": canonical } : {}),
+      ...(image ? {
+        "og:image": image,
+        "og:image:alt": title,
+        "twitter:image": image,
+        "twitter:image:alt": title,
+      } : {}),
+    };
+    const previousTags = Object.entries(socialTags).map(([key, value]) => {
+      const attribute = key.startsWith("og:") ? "property" : "name";
+      let tag = document.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
+      const existing = Boolean(tag);
+      const previous = tag?.content ?? "";
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(attribute, key);
+        document.head.appendChild(tag);
+      }
+      tag.content = value;
+      return { tag, existing, previous };
+    });
+    return () => {
+      previousTags.forEach(({ tag, existing, previous }) => {
+        if (existing) tag.content = previous;
+        else tag.remove();
+      });
+    };
+  }, [title, description, keywords, canonical, image, type]);
 
   return null;
 };

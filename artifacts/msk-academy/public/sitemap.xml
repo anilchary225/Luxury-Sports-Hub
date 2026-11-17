@@ -142,21 +142,35 @@
 
   <url>
     <loc>https://www.zenithh.com/coaches</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.zenithh.com/coaches/ramesh-gowda</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.zenithh.com/coaches/mounika-nagilla</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.zenithh.com/coaches/ch-vijayalakshmi</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.zenithh.com/coaches/gaalla-venkatesh</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

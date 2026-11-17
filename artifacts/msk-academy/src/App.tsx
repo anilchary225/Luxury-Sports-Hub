@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import ThemeToggle from "@/components/ThemeToggle";
-import EventInvitationPopup from "@/components/EventInvitationPopup";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -109,7 +108,6 @@ function App() {
           {/* <SportsMeetDialog /> */}
 
           <AppRouter />
-          <EventInvitationPopup />
           <Toaster />
         </BrowserRouter>
 

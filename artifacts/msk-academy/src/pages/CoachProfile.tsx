@@ -1,35 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   Trophy, 
-  Award, 
   Target, 
   Zap, 
   CheckCircle, 
-  ShieldCheck, 
-  Mail, 
   ArrowLeft,
-  Calendar,
-  Layers,
-  Star
 } from "lucide-react";
 import { COACHES_DATA } from "@/data/coaches";
+import SEO from "@/components/SEO";
 
 export default function CoachProfile() {
   const { id } = useParams();
   const coach = COACHES_DATA.find((c) => c.id === id);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    if (coach) {
-      document.title = `${coach.name} | Elite Coach @ Zenithh Sports Arena`;
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', `${coach.name} is a ${coach.role} at Zenithh Sports Arena. ${coach.shortSummary}`);
-      }
-    }
-  }, [coach]);
 
   if (!coach) {
     return (
@@ -46,6 +30,38 @@ export default function CoachProfile() {
 
   return (
     <div className="pt-16 min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)]">
+      <SEO
+        title={`${coach.name} | ${coach.role} | Zenithh`}
+        description={coach.shortSummary}
+        canonical={`https://www.zenithh.com/coaches/${coach.id}`}
+        image={`https://www.zenithh.com${coach.image}`}
+        type="profile"
+      />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "@id": `https://www.zenithh.com/coaches/${coach.id}#profile`,
+          url: `https://www.zenithh.com/coaches/${coach.id}`,
+          name: `${coach.name} - ${coach.role}`,
+          mainEntity: {
+            "@type": "Person",
+            "@id": `https://www.zenithh.com/coaches/${coach.id}#person`,
+            name: coach.name,
+            jobTitle: coach.role,
+            description: coach.about,
+            image: `https://www.zenithh.com${coach.image}`,
+            url: `https://www.zenithh.com/coaches/${coach.id}`,
+            knowsAbout: coach.specializations ?? coach.expertise,
+            worksFor: {
+              "@type": "SportsActivityLocation",
+              "@id": "https://www.zenithh.com/#sportsactivitylocation",
+              name: "Zenithh Sports Arena",
+              url: "https://www.zenithh.com/",
+            },
+          },
+        }).replace(/</g, "\\u003c")}
+      </script>
       {/* ═══ HERO SECTION ═══ */}
       <section className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
         {/* Animated Background Text Decoration */}
@@ -54,9 +70,9 @@ export default function CoachProfile() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center gap-16 lg:gap-24">
             {/* LEFT: CONTENT */}
-            <div className="w-full lg:w-3/5 order-2 lg:order-1">
+            <div className="w-full min-w-0 order-2 lg:order-1 [container-type:inline-size]">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -66,9 +82,17 @@ export default function CoachProfile() {
                   <ArrowLeft size={14} /> Back to Coaches
                 </Link>
                 <span className="text-[var(--color-gold-primary)] font-black tracking-[0.5em] uppercase text-xs block mb-4">ELITE MENTOR</span>
-                <h1 className="text-5xl md:text-8xl font-black uppercase mb-6 leading-[1.15] text-[var(--text-primary)]">
-                  {coach.name.split(' ').slice(0, -1).join(' ')} <br />
-                  <span className="text-[var(--color-gold-primary)] italic">{coach.name.split(' ').slice(-1)}</span>
+                <h1 className="font-black uppercase mb-6 leading-[1.15] text-[var(--text-primary)] [overflow-wrap:anywhere]"
+                  style={{ fontSize: coach.id === "gaalla-venkatesh" ? "clamp(1.5rem, 10cqw, 5rem)" : coach.name.split(' ').some((part) => part.length > 10) ? "clamp(1.25rem, 8cqw, 4rem)" : "clamp(2rem, 12cqw, 6rem)" }}
+                >
+                  {coach.id === "gaalla-venkatesh" ? (
+                    <><span className="block whitespace-nowrap">Gaalla</span><span className="block whitespace-nowrap text-[var(--color-gold-primary)] italic">Venkatesh</span></>
+                  ) : (
+                    <>
+                      {coach.name.split(' ').slice(0, -1).join(' ')} <br />
+                      <span className="text-[var(--color-gold-primary)] italic">{coach.name.split(' ').slice(-1)}</span>
+                    </>
+                  )}
                 </h1>
                 <p className="text-[var(--color-gold-primary)] font-bold text-xl uppercase tracking-widest mb-8 border-l-4 border-[var(--color-gold-primary)] pl-6">
                   {coach.role}
@@ -88,7 +112,7 @@ export default function CoachProfile() {
             </div>
 
             {/* RIGHT: PORTRAIT */}
-            <div className="w-full lg:w-2/5 order-1 lg:order-2">
+            <div className="w-full min-w-0 order-1 lg:order-2">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, x: 50 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -98,10 +122,11 @@ export default function CoachProfile() {
                 {/* Image Ornament */}
                 <div className="absolute -inset-4 border border-[var(--color-gold-primary)]/20 -z-10 translate-x-4 translate-y-4" />
                 
-                <div className="aspect-[4/5] overflow-hidden bg-[var(--bg-card)] border border-[var(--border-light)]">
+                <div className="relative z-10 aspect-[4/5] overflow-hidden bg-black border border-[var(--border-light)]">
                   <img loading="lazy" 
                     src={coach.image} 
                     alt={coach.name} 
+                    style={{ objectPosition: coach.imagePosition }}
                     className="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   />
                 </div>
@@ -180,6 +205,7 @@ export default function CoachProfile() {
                 </div>
 
                 {/* TIMELINE / PROGRAMS */}
+                {(Boolean(coach.experienceTimeline?.length) || Boolean(coach.programs?.length)) && (
                 <div className="p-10 bg-[var(--bg-secondary)] border border-[var(--border-light)] relative">
                   <Target className="absolute top-8 right-8 text-[var(--color-gold-primary)]/20" size={40} />
                   <h3 className="text-2xl font-black uppercase text-[var(--color-gold-primary)] mb-8 tracking-widest">
@@ -206,6 +232,7 @@ export default function CoachProfile() {
                     )}
                   </div>
                 </div>
+                )}
               </div>
             </div>
           </div>

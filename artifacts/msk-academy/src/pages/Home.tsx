@@ -29,7 +29,8 @@ const ParticleBackground = () => {
       opacity: number;
     }[] = [];
 
-    const particleCount = 60;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const particleCount = window.innerWidth < 768 ? 18 : 36;
     let animationFrameId: number;
 
     const resize = () => {
@@ -75,7 +76,7 @@ const ParticleBackground = () => {
 
     resize();
     createParticles();
-    animate();
+    if (!prefersReducedMotion) animate();
 
     return () => {
       cancelAnimationFrame(animationFrameId);
@@ -301,10 +302,11 @@ const HOME_FAQS: FAQItem[] = [
 
 export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => !sessionStorage.getItem("zenithh-intro-seen"));
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      sessionStorage.setItem("zenithh-intro-seen", "1");
       setIsLoading(false);
     }, 1800);
 
@@ -371,7 +373,8 @@ export default function Home() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
+            poster="/images/gallery-hero.webp"
             className="absolute inset-0 z-0 h-full w-full object-cover"
           >
             <source

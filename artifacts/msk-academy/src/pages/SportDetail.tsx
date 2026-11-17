@@ -180,7 +180,7 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "Cricket",
     seoKeyword: "box cricket near me miyapur",
     subtitle: "Premium Cricket Nets & Coaching",
-    heroImage: "/images/cricket-card.webp",
+    heroImage: "/images/cricket-2_copy1.webp",
 
     description:
       "Experience world-class cricket training at Zenithh Sports Arena. Our facility features professional-grade nets, high-speed bowling machines, and expert coaching designed to refine your technique and elevate your game to the next level. If you are searching for box cricket near me miyapur, Zenithh offers quality facilities and easy booking. Book your box cricket near me miyapur experience at Zenithh Sports Arena today.",
@@ -249,9 +249,26 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "BCCI Certified Level 2 Coaches",
     gallery: [
+      "/images/cricket-1_copy1.webp",
+      "/images/cricket-2_copy1.webp",
+      "/images/cricket-3_copy1.webp",
       "/images/cricket-1.webp",
       "/images/cricket-2.webp",
       "/images/cricket-3.webp",
+    ],
+    videos: [
+      "/videos/C0010.webm",
+      "/videos/C0011.webm",
+      "/videos/C0013.webm",
+      "/videos/C0018.webm",
+      "/videos/C0021.webm",
+      "/videos/cricket-boys-1.webm",
+      "/videos/cricket-boys-2.webm",
+      "/videos/cricket-boys-3.webm",
+      "/videos/girls-cricket-1.webm",
+      "/videos/girls-cricket-2.webm",
+      "/videos/girls-cricket-3.webm",
+      "/videos/girls-cricket-4.webm",
     ],
   },
 
@@ -259,7 +276,7 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "Pickleball",
     seoKeyword: "Pickleball court near me Miyapur",
     subtitle: "Elite Pickleball Courts",
-    heroImage: "/images/pickleball.webp",
+    heroImage: "/images/pickle-ball-1.webp",
 
     description:
       "Join the fastest growing sport in the world on our premium pickleball courts. Whether you are a beginner looking to learn the basics or an advanced player seeking competitive matches, our courts offer the perfect environment. If you are searching for Pickleball court near me Miyapur, Zenithh offers quality facilities and easy booking. Book your Pickleball court near me Miyapur experience at Zenithh Sports Arena today.",
@@ -328,6 +345,9 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Professional Pickleball Instructors",
     gallery: [
+      "/images/pickle-ball-1.webp",
+      "/images/pickle-ball-2.webp",
+      "/images/pickle-ball-3.webp",
       "/images/gallery-pickle-1.webp",
       "/images/pickle-ball.webp",
     ],
@@ -337,7 +357,8 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "Volleyball",
     seoKeyword: "Volleyball Court Near Me Miyapur",
     subtitle: "Professional Volleyball Arena",
-    heroImage: "/images/volleyball.webp",
+    heroImage: "/images/volley-ball-1.webp",
+    heroVideo: "/videos/volleyball-drone-hero.mp4",
 
     description:
       "Spike, set, and serve in our state-of-the-art volleyball arena. Designed to international standards, our courts are perfect for rigorous training sessions, casual games, and competitive leagues. If you are searching for Volleyball Court Near Me Miyapur, Zenithh offers quality facilities, exciting games, and easy booking. Book your Volleyball Court Near Me Miyapur experience at Zenithh Sports Arena today.",
@@ -406,11 +427,18 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "National Level Volleyball Coaches",
     gallery: [
+      "/images/volley-ball-1.webp",
+      "/images/volley-ball-2.webp",
+      "/images/volley-ball-3.webp",
       "/images/gallery-volley-1.webp",
       "/images/gallery-volley-2.webp",
       "/images/gallery-volley-3.webp",
       "/images/volleyball-action-1.webp",
       "/images/volleyball-action-2.webp",
+    ],
+    videos: [
+      "/videos/volleyball-boys.webm",
+      "/videos/volleyball-drone-hero.mp4",
     ],
   },
 
@@ -965,7 +993,7 @@ const SPORT_DETAILS: Record<string, any> = {
     title: "Badminton Outdoor",
     seoKeyword: "Badminton Court Near Me Miyapur",
     subtitle: "High-Energy Outdoor Badminton",
-    heroImage: "/images/badminton-card.webp",
+    heroImage: "/images/badminton-1.webp",
 
     description:
       "Experience the thrill of outdoor badminton at Zenithh Sports Arena. Specifically designed for all-weather recreational and competitive play, our outdoor badminton courts offer an exhilarating environment to improve fitness, agility, and racquet skills under the open sky. If you are searching for Badminton Court Near Me Miyapur, Zenithh offers quality facilities and easy booking. Book your Badminton Court Near Me Miyapur experience at Zenithh Sports Arena today.",
@@ -1036,7 +1064,8 @@ const SPORT_DETAILS: Record<string, any> = {
     schedule: "Morning: 7 AM – 10 AM, Evening: 5 PM – 8 PM",
     coaches: "Certified Badminton Coaches",
     gallery: [
-   
+      "/images/badminton-1.webp",
+      "/images/badminton-2.webp",
     ],
   },
 };
@@ -1195,6 +1224,14 @@ export default function SportDetail() {
 
   const sport = SPORT_DETAILS[resolvedSportId];
 
+  const pauseOtherVideos = (event: React.SyntheticEvent<HTMLVideoElement>) => {
+    document
+      .querySelectorAll<HTMLVideoElement>("video[data-sport-video]")
+      .forEach((video) => {
+        if (video !== event.currentTarget) video.pause();
+      });
+  };
+
   /* =======================================================
      PAGE
      ======================================================= */
@@ -1223,16 +1260,34 @@ export default function SportDetail() {
         <section className="relative h-[60vh] md:h-[70vh] flex items-end pb-16 overflow-hidden pt-20">
 
           <div className="premium-image-hover absolute inset-0 z-0">
-            <img
-              src={sport.heroImage}
-              alt={sport.title}
-              className="w-full h-full object-cover object-center"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src =
-                  "/images/about-arena.webp";
-              }}
-            />
+            {sport.heroVideo ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={sport.heroImage}
+                data-sport-video
+                onPlay={pauseOtherVideos}
+                className="w-full h-full object-cover object-center"
+              >
+                <source src={sport.heroVideo} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                src={sport.heroImage}
+                alt={sport.title}
+                width="1920"
+                height="1280"
+                fetchPriority="high"
+                className="w-full h-full object-cover object-center"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "/images/about-arena.webp";
+                }}
+              />
+            )}
 
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/60 to-transparent z-10" />
           </div>
@@ -1632,6 +1687,8 @@ export default function SportDetail() {
                           alt={`${sport.title} Gallery ${
                             idx + 1
                           }`}
+                          width="1600"
+                          height="1067"
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             e.currentTarget.onerror = null;
@@ -1646,6 +1703,47 @@ export default function SportDetail() {
 
                 </div>
 
+              </div>
+            </section>
+          )}
+
+        {sport.videos &&
+          sport.videos.length > 0 && (
+            <section className="py-20 bg-[var(--bg-primary)] border-t border-[var(--border-light)]">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-12">
+                  <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs block mb-3">
+                    Watch in Action
+                  </span>
+                  <h2 className="text-3xl md:text-5xl font-black uppercase text-[var(--text-primary)] leading-[1.3]">
+                    {sport.title} Videos
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                  {sport.videos.map((video: string, idx: number) => (
+                    <div
+                      key={video}
+                      className="aspect-video overflow-hidden bg-black border border-[var(--border-light)]"
+                    >
+                      <video
+                        controls
+                        playsInline
+                        preload="metadata"
+                        data-sport-video
+                        onPlay={pauseOtherVideos}
+                        className="h-full w-full object-cover"
+                        aria-label={`${sport.title} video ${idx + 1}`}
+                      >
+                        <source
+                          src={video}
+                          type={video.endsWith(".mp4") ? "video/mp4" : "video/webm"}
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  ))}
+                </div>
               </div>
             </section>
           )}

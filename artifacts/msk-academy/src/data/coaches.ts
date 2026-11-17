@@ -4,6 +4,7 @@ export interface Coach {
   role: string;
   shortSummary: string;
   image: string;
+  imagePosition?: string;
   expertise: string[];
   highlights: string[];
   skills: string[];
@@ -20,11 +21,75 @@ export interface Coach {
 
 export const COACHES_DATA: Coach[] = [
   {
+    id: "gaalla-venkatesh",
+    name: "Gaalla Venkatesh",
+    role: "Physical Director & Multi-Sport Coach",
+    shortSummary: "Senior Kabaddi champion 2 times and Senior National wrestling player 3 times, with All-Inter-University participation in other states and multi-sport coaching experience.",
+    image: "/images/coach-gaalla-venkatesh.webp",
+    imagePosition: "center top",
+    expertise: ["Kabaddi", "Wrestling", "Athletics", "Multi-Sport Training"],
+    highlights: [
+      "Senior Kabaddi champion - 2 times",
+      "Senior National wrestling player - 3 times",
+      "All-Inter-University participations, other state - 3 times",
+      "Coaching experience across multiple sports and games"
+    ],
+    skills: ["Athletics", "Wrestling", "Kabaddi", "Basketball", "Badminton", "Kho-Kho", "Cricket", "Lawn Tennis", "Track & Field"],
+    about: "Gaalla Venkatesh is a Physical Director and multi-sport coach. He has been a senior Kabaddi champion 2 times and a Senior National wrestling player 3 times. He has also participated in All-Inter-University wrestling competitions in other states 3 times. His coaching experience spans athletics, wrestling, Kabaddi, basketball, badminton, Kho-Kho, cricket, lawn tennis, and track and field events.",
+    achievements: [
+      "Kabaddi - Senior Champion 2 times",
+      "Wrestling - Senior National Player 3 times",
+      "Wrestling - All-Inter-University participations, other state - 3 times"
+    ],
+    specializations: ["Kabaddi", "Wrestling", "Athletics", "Basketball", "Badminton", "Kho-Kho", "Cricket", "Lawn Tennis", "Track & Field"],
+    programs: [
+      "Kabaddi Fundamentals & Team Play",
+      "Wrestling Skills & Technique",
+      "Athletics, Track & Field Development",
+      "Multi-Sport Skills & Coordination"
+    ],
+    ctaText: "Develop your skills across sports with Gaalla Venkatesh."
+  },
+  {
+    id: "ch-vijayalakshmi",
+    name: "Ch. Vijayalakshmi",
+    role: "Volleyball, Throwball & Multi-Sport Coach",
+    shortSummary: "National volleyball and state-level throwball player, qualified in B.P.Ed. and M.P.Ed., with a South Zone multi-sport background.",
+    image: "/images/coach-ch-vijayalakshmi-uniform.webp",
+    imagePosition: "center top",
+    expertise: ["Volleyball", "Throwball", "Multi-Sport Training", "Physical Education"],
+    highlights: [
+      "National Volleyball Player",
+      "State-level Throwball Player",
+      "B.P.Ed. and M.P.Ed. qualifications",
+      "2 years of experience",
+      "South Zone participation in Handball, Kho-Kho and Kabaddi",
+      "All-rounder across multiple games"
+    ],
+    skills: ["Volleyball", "Handball", "Kho-Kho", "Kabaddi", "Throwball", "Physical Education", "Multi-Sport Training"],
+    about: "Ch. Vijayalakshmi is a national volleyball player and state-level throwball player with B.P.Ed. and M.P.Ed. qualifications and 2 years of experience. Her sporting background includes South Zone participation in handball, Kho-Kho and kabaddi. An all-rounder across multiple games, she brings a broad physical education and competitive sports background to Zenithh Sports Arena.",
+    achievements: [
+      "National Volleyball Player",
+      "South Zone participation - Handball, Kho-Kho and Kabaddi",
+      "State-level Throwball Player"
+    ],
+    specializations: ["Volleyball", "Handball", "Kho-Kho", "Kabaddi", "Throwball"],
+    certifications: ["Bachelor of Physical Education (B.P.Ed.)", "Master of Physical Education (M.P.Ed.)"],
+    programs: [
+      "Volleyball Fundamentals & Team Play",
+      "Throwball Skills & Match Practice",
+      "Multi-Sport Skills: Handball, Kho-Kho & Kabaddi",
+      "Fitness, Agility & Coordination"
+    ],
+    ctaText: "Explore volleyball and multi-sport training with Ch. Vijayalakshmi."
+  },
+  {
     id: "ramesh-gowda",
     name: "Donikena Ramesh",
     role: "Physical Director",
     shortSummary: "Experienced performance-focused sports professional specializing in athlete development, fitness training, and coaching methodologies.",
-    image: "/images/coach-Ramesh.webp",
+    image: "/images/coach-donikena-ramesh-uniform.webp",
+    imagePosition: "center top",
     expertise: ["Athlete Conditioning", "Sports Performance Training", "Team Leadership"],
     highlights: [
       "Expert in athlete performance enhancement",
@@ -85,7 +150,8 @@ export const COACHES_DATA: Coach[] = [
     name: "Nagilla Mounika",
     role: "Physical Education Teacher (PET) & Kabaddi Coach",
     shortSummary: "Dedicated Physical Education professional with experience in athlete training, kabaddi coaching, and athletics.",
-    image: "/images/coach-nagilla mounika.webp",
+    image: "/images/coach-nagilla-mounika-uniform.webp",
+    imagePosition: "center top",
     expertise: ["Kabaddi", "Athletics", "Youth Development"],
     highlights: [
       "National-level Kabaddi participant",
